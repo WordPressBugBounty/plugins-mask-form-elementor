@@ -140,6 +140,8 @@ class Mask_Form_Elementor {
 
         require_once MFE_PLUGIN_PATH . '/includes/class-plugin-elementor-page.php';
         new MFE_Elementor_Page();
+
+        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
     }
 
         
@@ -252,14 +254,14 @@ class Mask_Form_Elementor {
 			return false;
 		}
 
-		if ( is_plugin_active( 'cool-formkit-for-elementor-forms/cool-formkit-for-elementor-forms.php' ) ) {
-			return false;
-		}
+		// if ( is_plugin_active( 'cool-formkit-for-elementor-forms/cool-formkit-for-elementor-forms.php' ) ) {
+		// 	return false;
+		// }
 
-		if ( ! is_plugin_active( 'elementor-pro/elementor-pro.php' ) ) {
-			add_action('admin_notices', array($this, 'admin_notice_missing_main_plugin'));
-			return false;
-		}
+		// if ( ! is_plugin_active( 'elementor-pro/elementor-pro.php' ) ) {
+		// 	add_action('admin_notices', array($this, 'admin_notice_missing_main_plugin'));
+		// 	return false;
+		// }
 
 		return true;
 	}
@@ -312,20 +314,60 @@ class Mask_Form_Elementor {
      * Enqueue frontend scripts.
      */
     public function enqueue_scripts() {
-        wp_enqueue_script(
-            'jquery.mask.min.js',
-            MFE_PLUGIN_URL . 'assets/deprecate_js/jquery.mask.min.js',
-            [ 'jquery' ],
-            '1.0',
-            true
-        );
-        wp_enqueue_script(
-            'maskformelementor.js',
-            MFE_PLUGIN_URL . 'assets/deprecate_js/maskformelementor.js',
-            [ 'jquery' ],
-            '1.0',
-            true
-        );
+        $post_id = get_the_ID();
+        $post    = get_post($post_id);
+    
+        // Check if Elementor Pro is active and if the current page is built with Elementor.
+        $using_elementor_pro = false;
+        if ( defined('ELEMENTOR_PRO_VERSION') ) {
+            $using_elementor_pro = \Elementor\Plugin::$instance->db->is_built_with_elementor( $post_id );
+        }
+    
+        // Initialize widget_found as false.
+        $widget_found = false;
+        $widget_ids = get_option( 'mfe_old_widget_id', array() );
+        
+        // Get the Elementor data stored in the post meta.
+        $elementor_data = get_post_meta( $post_id, '_elementor_data', true );
+        
+        if ( is_array( $widget_ids ) && ! empty( $widget_ids ) ) {
+            // Check in Elementor data first.
+            if ( $elementor_data ) {
+                foreach ( $widget_ids as $widget_id ) {
+                    if ( strpos( $elementor_data, $widget_id ) !== false ) {
+                        $widget_found = true;
+                        break;
+                    }
+                }
+            }
+            // Optionally, you can also check the post content.
+            if ( ! $widget_found && $post ) {
+                $content = $post->post_content;
+                foreach ( $widget_ids as $widget_id ) {
+                    if ( strpos( $content, $widget_id ) !== false ) {
+                        $widget_found = true;
+                        break;
+                    }
+                }
+            }
+        }       
+
+        if ( $widget_found || !$using_elementor_pro ) {
+            wp_enqueue_script(
+                'jquery.mask.min.js',
+                MFE_PLUGIN_URL . 'assets/deprecate_js/jquery.mask.min.js',
+                [ 'jquery' ],
+                '1.0',
+                true
+            );
+            wp_enqueue_script(
+                'maskformelementor.js',
+                MFE_PLUGIN_URL . 'assets/deprecate_js/maskformelementor.js',
+                [ 'jquery' ],
+                '1.0',
+                true
+            );
+        }
     }
 
     /**

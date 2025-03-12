@@ -199,12 +199,12 @@ class InputHandler extends elementorModules.frontend.handlers.Base {
                             }
                             break;
                         default:
-                            $input.addClass('mask-ph8');
-                            $input.after('<div class="mask-error error-ph8"></div>');
-                            if(autoPlaceholder === 'yes'){
-                                $input.attr('placeholder','XXXX-XXXX')
-                            }
-                            break
+                            // $input.addClass('mask-ph8');
+                            // $input.after('<div class="mask-error error-ph8"></div>');
+                            // if(autoPlaceholder === 'yes'){
+                            //     $input.attr('placeholder','XXXX-XXXX')
+                            // }
+                            // break
                     }
                 }
                 if (masks[maskKey] === "####-####") {

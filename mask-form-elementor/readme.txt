@@ -4,7 +4,7 @@ Tags: elementor form, mask, input masks, elementor, formulario
 Requires at least: 5.0
 Tested up to: 6.7.2
 Requires PHP: 7.2
-Stable tag: 4.0.0
+Stable tag: 4.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Elementor tested up to: 3.27.6
@@ -145,6 +145,10 @@ We will continue to expand the list of supported input masks in future updates b
 — —————————————- —
 
 == Changelog ==
+
+### Version 4.1.0 | 12/03/2025
+**Added:**
+- Compatibility with Pro Elements and other form plugins.
 
 ### Version 4.0.0 | 11/03/2025
 [Cool Plugins](https://coolplugins.net/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=homepage&utm_content=author) is now maintaining this plugin and providing regular updates.
