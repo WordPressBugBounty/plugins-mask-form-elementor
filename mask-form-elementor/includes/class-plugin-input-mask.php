@@ -78,25 +78,25 @@ final class MFE_Plugin {
 
 	public function frontend_assets(){	
 		$error_messages = [
-			'mask-cnpj'   => __("Invalid CNPJ.", "form-masks-for-elementor"),
-			'mask-cpf'    => __("Invalid CPF.", "form-masks-for-elementor"),
-			'mask-cep'    => __("Invalid CEP (XXXXX-XXX).", "form-masks-for-elementor"),
-			'mask-phus'   => __("Invalid number: (123) 456-7890", "form-masks-for-elementor"),
-			'mask-ph8'    => __("Invalid number: 1234-5678", "form-masks-for-elementor"),
-			'mask-ddd8'   => __("Invalid number: (DDD) 1234-5678", "form-masks-for-elementor"),
-			'mask-ddd9'   => __("Invalid number: (DDD) 91234-5678", "form-masks-for-elementor"),
-			'mask-dmy'    => __("Invalid date: dd/mm/yyyy", "form-masks-for-elementor"),
-			'mask-mdy'    => __("Invalid date: mm/dd/yyyy", "form-masks-for-elementor"),
-			'mask-hms'    => __("Invalid time: hh:mm:ss", "form-masks-for-elementor"),
-			'mask-hm'     => __("Invalid time: hh:mm", "form-masks-for-elementor"),
-			'mask-dmyhm'  => __("Invalid date: dd/mm/yyyy hh:mm", "form-masks-for-elementor"),
-			'mask-mdyhm'  => __("Invalid date: mm/dd/yyyy hh:mm", "form-masks-for-elementor"),
-			'mask-my'     => __("Invalid date: mm/yyyy", "form-masks-for-elementor"),
-			'mask-ccs'    => __("Invalid credit card number.", "form-masks-for-elementor"),
-			'mask-cch'    => __("Invalid credit card number.", "form-masks-for-elementor"),
-			'mask-ccmy'   => __("Invalid date.", "form-masks-for-elementor"),
-			'mask-ccmyy'  => __("Invalid date.", "form-masks-for-elementor"),
-			'mask-ipv4'   => __("Invalid IPv4 address.", "form-masks-for-elementor")
+			'mask-cnpj'   => __("Invalid CNPJ.", "mask-form-elementor"),
+			'mask-cpf'    => __("Invalid CPF.", "mask-form-elementor"),
+			'mask-cep'    => __("Invalid CEP (XXXXX-XXX).", "mask-form-elementor"),
+			'mask-phus'   => __("Invalid number: (123) 456-7890", "mask-form-elementor"),
+			'mask-ph8'    => __("Invalid number: 1234-5678", "mask-form-elementor"),
+			'mask-ddd8'   => __("Invalid number: (DDD) 1234-5678", "mask-form-elementor"),
+			'mask-ddd9'   => __("Invalid number: (DDD) 91234-5678", "mask-form-elementor"),
+			'mask-dmy'    => __("Invalid date: dd/mm/yyyy", "mask-form-elementor"),
+			'mask-mdy'    => __("Invalid date: mm/dd/yyyy", "mask-form-elementor"),
+			'mask-hms'    => __("Invalid time: hh:mm:ss", "mask-form-elementor"),
+			'mask-hm'     => __("Invalid time: hh:mm", "mask-form-elementor"),
+			'mask-dmyhm'  => __("Invalid date: dd/mm/yyyy hh:mm", "mask-form-elementor"),
+			'mask-mdyhm'  => __("Invalid date: mm/dd/yyyy hh:mm", "mask-form-elementor"),
+			'mask-my'     => __("Invalid date: mm/yyyy", "mask-form-elementor"),
+			'mask-ccs'    => __("Invalid credit card number.", "mask-form-elementor"),
+			'mask-cch'    => __("Invalid credit card number.", "mask-form-elementor"),
+			'mask-ccmy'   => __("Invalid date.", "mask-form-elementor"),
+			'mask-ccmyy'  => __("Invalid date.", "mask-form-elementor"),
+			'mask-ipv4'   => __("Invalid IPv4 address.", "mask-form-elementor")
 		];
 
 		wp_enqueue_script( 'fme-custom-mask-script' );

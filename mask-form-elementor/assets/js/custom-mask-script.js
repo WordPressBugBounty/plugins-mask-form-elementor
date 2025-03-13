@@ -547,18 +547,21 @@
           // Eliminate obvious invalid CPFs (repeated digits)
           if (/^(\d)\1+$/.test(cpf)) return false;
       
-          let validateCPF = (cpf, length) => {
+          let calculateDigit = (cpf, length) => {
               let sum = 0;
               for (let i = 0; i < length; i++) {
                   sum += parseInt(cpf.charAt(i)) * (length + 1 - i);
               }
               let result = (sum * 10) % 11;
-              return result === 10 ? 0 : result === parseInt(cpf.charAt(length));
+              return result === 10 ? 0 : result;
           };
       
-          return validateCPF(cpf, 9) && validateCPF(cpf, 10);
-        }
+          let firstDigit = calculateDigit(cpf, 9);
+          let secondDigit = calculateDigit(cpf, 10); // Now correctly includes first digit in the calculation
       
+          return firstDigit === parseInt(cpf.charAt(9)) && secondDigit === parseInt(cpf.charAt(10));
+        }      
+
         // Validate CEP (Brazilian Postal Code - XXXXX-XXX)
         function isValidCEP(cep) {
           return /^\d{5}-\d{3}$/.test(cep); // Matches format XXXXX-XXX
@@ -588,11 +591,15 @@
                 return $(this).text().trim() !== ""; 
             });
 
-            if ($errors.length > 0) {
-                e.preventDefault(); 
-                $('html, body').animate({
-                    scrollTop: $errors.first().offset().top - 200 
-                }, 500);
+            if($errors.length > 0){
+              $errors.each(function(){
+                if($(this)[0].style.display !== 'none'){
+                    e.preventDefault(); 
+                    $('html, body').animate({
+                        scrollTop: $(this).offset().top - 200 
+                    }, 500);
+                }
+              })
             }
         })
       

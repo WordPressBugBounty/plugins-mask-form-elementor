@@ -33,7 +33,7 @@ class MFE_Elementor_Forms_Mask {
 	public function add_mask_control( $element, $args ) {
 		$elementor = ElementorPlugin::instance();
 		$control_data = $elementor->controls_manager->get_control_from_stack( $element->get_name(), 'form_fields' );
-		$pro_tag = ' <a class="fme-pro-feature" href="https://codecanyon.net/item/form-masks-for-elementor/25872641" target="_blank">' . esc_html__( 'PRO', 'form-masks-for-elementor' ) . '</a>';
+		$pro_tag = ' <a class="fme-pro-feature" href="https://codecanyon.net/item/form-masks-for-elementor/25872641" target="_blank">' . esc_html__( 'PRO', 'mask-form-elementor' ) . '</a>';
 
 		if ( is_wp_error( $control_data ) ) {
 			return;
@@ -41,20 +41,20 @@ class MFE_Elementor_Forms_Mask {
 
 		$controls_to_register = [
 			'fme_mask_control' => [
-				'label' => esc_html__( 'Mask Control', 'form-masks-for-elementor' ),
+				'label' => esc_html__( 'Mask Control', 'mask-form-elementor' ),
 				'type' => ElementorControls::SELECT,
 				'tab' => 'content',
 				'tabs_wrapper' => 'form_fields_tabs',
 				'inner_tab' => 'form_fields_advanced_tab',
 				'default' => 'mask',
 				'options' => [
-					'mask' => esc_html__( 'Select Mask', 'form-masks-for-elementor' ),
-					'ev-phone' => esc_html__( 'Phone', 'form-masks-for-elementor' ),
-					'ev-time' => esc_html__( 'Date & Time', 'form-masks-for-elementor' ),
-					'ev-money' => esc_html__( 'Money', 'form-masks-for-elementor' ),
-					'ev-ccard' => esc_html__( 'Credit Card', 'form-masks-for-elementor' ),
-					'ev-br_fr' => esc_html__( 'Brazilian Formats', 'form-masks-for-elementor' ),
-					'ev-ip-address' => esc_html__( 'IP Address', 'form-masks-for-elementor' ),
+					'mask' => esc_html__( 'Select Mask', 'mask-form-elementor' ),
+					'ev-phone' => esc_html__( 'Phone', 'mask-form-elementor' ),
+					'ev-time' => esc_html__( 'Date & Time', 'mask-form-elementor' ),
+					'ev-money' => esc_html__( 'Money', 'mask-form-elementor' ),
+					'ev-ccard' => esc_html__( 'Credit Card', 'mask-form-elementor' ),
+					'ev-br_fr' => esc_html__( 'Brazilian Formats', 'mask-form-elementor' ),
+					'ev-ip-address' => esc_html__( 'IP Address', 'mask-form-elementor' ),
 				],
 				'conditions' => [
 					'terms' => [
@@ -67,7 +67,7 @@ class MFE_Elementor_Forms_Mask {
 				],
 			],
 			'fme_mask_auto_placeholders' => [
-				'label' => esc_html__( 'Mask Placeholders', 'form-masks-for-elementor' ),
+				'label' => esc_html__( 'Mask Placeholders', 'mask-form-elementor' ),
 				'type' => ElementorControls::SWITCHER,
 				'tab' => 'content',
 				'tabs_wrapper' => 'form_fields_tabs',
@@ -91,15 +91,15 @@ class MFE_Elementor_Forms_Mask {
 				],
 			],
 			'fme_money_mask_format' => [
-				'label' => esc_html__( 'Thousand separator', 'form-masks-for-elementor' ),
+				'label' => esc_html__( 'Thousand separator', 'mask-form-elementor' ),
 				'type' => ElementorControls::SELECT,
 				'tab' => 'content',
 				'tabs_wrapper' => 'form_fields_tabs',
 				'inner_tab' => 'form_fields_advanced_tab',
 				'default' => 'dot',
 				'options' => [
-					'dot' => esc_html__( 'Dot (.)', 'form-masks-for-elementor' ),
-					'comma' => esc_html__( 'Comma (,)', 'form-masks-for-elementor' )
+					'dot' => esc_html__( 'Dot (.)', 'mask-form-elementor' ),
+					'comma' => esc_html__( 'Comma (,)', 'mask-form-elementor' )
 				],
 				'conditions' => [
 						'terms' => [
@@ -117,7 +117,7 @@ class MFE_Elementor_Forms_Mask {
 				],
 			],
 			'fme_money_mask_prefix' => [
-				'label' => esc_html__( 'Mask Prefix', 'form-masks-for-elementor' ),
+				'label' => esc_html__( 'Mask Prefix', 'mask-form-elementor' ),
 				'type' => ElementorControls::TEXT,
 				'tab' => 'content',
 				'tabs_wrapper' => 'form_fields_tabs',
@@ -142,7 +142,7 @@ class MFE_Elementor_Forms_Mask {
 				],
 			],
 			'fme_money_mask_decimal_places' => [
-				'label' => esc_html__( 'Mask Decimal Places', 'form-masks-for-elementor' ),
+				'label' => esc_html__( 'Mask Decimal Places', 'mask-form-elementor' ),
 				'type' => ElementorControls::TEXT,
 				'tab' => 'content',
 				'tabs_wrapper' => 'form_fields_tabs',
@@ -167,20 +167,20 @@ class MFE_Elementor_Forms_Mask {
 				],
 			],
 			'fme_time_mask_format' => [
-				'label' => esc_html__( 'Date Format', 'form-masks-for-elementor' ),
+				'label' => esc_html__( 'Date Format', 'mask-form-elementor' ),
 				'type' => ElementorControls::SELECT,
 				'tab' => 'content',
 				'tabs_wrapper' => 'form_fields_tabs',
 				'inner_tab' => 'form_fields_advanced_tab',
 				'default' => 'one',
 				'options' => [
-					'three' => esc_html__( 'Date (dd/mm/yyyy)', 'form-masks-for-elementor' ),
-					'four' => esc_html__( 'Date (mm/dd/yyyy)', 'form-masks-for-elementor' ),
-					'five' => esc_html__( 'DateTime (dd/mm/yyyy hh:mm)', 'form-masks-for-elementor' ),
-					'six' => esc_html__( 'DateTime (mm/dd/yyyy hh:mm)', 'form-masks-for-elementor' ),
-					'one' => esc_html__( 'Time (hh:mm)', 'form-masks-for-elementor' ),
-					'two' => esc_html__( 'Time (hh:mm:ss)', 'form-masks-for-elementor' ),
-					'seven' => esc_html__( 'Month/Year (mm/yyyy)', 'form-masks-for-elementor' ),
+					'three' => esc_html__( 'Date (dd/mm/yyyy)', 'mask-form-elementor' ),
+					'four' => esc_html__( 'Date (mm/dd/yyyy)', 'mask-form-elementor' ),
+					'five' => esc_html__( 'DateTime (dd/mm/yyyy hh:mm)', 'mask-form-elementor' ),
+					'six' => esc_html__( 'DateTime (mm/dd/yyyy hh:mm)', 'mask-form-elementor' ),
+					'one' => esc_html__( 'Time (hh:mm)', 'mask-form-elementor' ),
+					'two' => esc_html__( 'Time (hh:mm:ss)', 'mask-form-elementor' ),
+					'seven' => esc_html__( 'Month/Year (mm/yyyy)', 'mask-form-elementor' ),
 				],
 				'conditions' => [
 						'terms' => [
@@ -198,16 +198,16 @@ class MFE_Elementor_Forms_Mask {
 				],
 			],
 			'fme_brazilian_formats' => [
-				'label' => esc_html__( 'Select Format', 'form-masks-for-elementor' ),
+				'label' => esc_html__( 'Select Format', 'mask-form-elementor' ),
 				'type' => ElementorControls::SELECT,
 				'tab' => 'content',
 				'tabs_wrapper' => 'form_fields_tabs',
 				'inner_tab' => 'form_fields_advanced_tab',
 				'default' => 'fme_cpf',
 				'options' => [
-					'fme_cpf' => esc_html__( 'CPF', 'form-masks-for-elementor' ),
-					'fme_cnpj' => esc_html__( 'CNPJ', 'form-masks-for-elementor' ),
-					'fme_cep' => esc_html__( 'CEP', 'form-masks-for-elementor' ),
+					'fme_cpf' => esc_html__( 'CPF', 'mask-form-elementor' ),
+					'fme_cnpj' => esc_html__( 'CNPJ', 'mask-form-elementor' ),
+					'fme_cep' => esc_html__( 'CEP', 'mask-form-elementor' ),
 				],
 				'conditions' => [
 						'terms' => [
@@ -225,17 +225,17 @@ class MFE_Elementor_Forms_Mask {
 				],
 			],
 			'fme_credit_card_options' => [
-				'label' => esc_html__( 'Credit Card Options', 'form-masks-for-elementor' ),
+				'label' => esc_html__( 'Credit Card Options', 'mask-form-elementor' ),
 				'type' => ElementorControls::SELECT,
 				'tab' => 'content',
 				'tabs_wrapper' => 'form_fields_tabs',
 				'inner_tab' => 'form_fields_advanced_tab',
 				'default' => 'hyphen',
 				'options' => [
-					'space' => esc_html__( 'Credit card with space', 'form-masks-for-elementor' ),
-					'hyphen' => esc_html__( 'Credit card with hyphen', 'form-masks-for-elementor' ),
-					'credit_card_date' => esc_html__( 'Expiry Date (MM/YY)', 'form-masks-for-elementor' ),
-					'credit_card_expiry_date' => esc_html__( 'Expiry Date (MM/YYYY)', 'form-masks-for-elementor' ),
+					'space' => esc_html__( 'Credit card with space', 'mask-form-elementor' ),
+					'hyphen' => esc_html__( 'Credit card with hyphen', 'mask-form-elementor' ),
+					'credit_card_date' => esc_html__( 'Expiry Date (MM/YY)', 'mask-form-elementor' ),
+					'credit_card_expiry_date' => esc_html__( 'Expiry Date (MM/YYYY)', 'mask-form-elementor' ),
 				],
 				'conditions' => [
 						'terms' => [
@@ -253,17 +253,17 @@ class MFE_Elementor_Forms_Mask {
 				],
 			],
 			'fme_phone_format' => [
-				'label' => esc_html__( 'Phone Format', 'form-masks-for-elementor' ),
+				'label' => esc_html__( 'Phone Format', 'mask-form-elementor' ),
 				'type' => ElementorControls::SELECT,
 				'tab' => 'content',
 				'tabs_wrapper' => 'form_fields_tabs',
 				'inner_tab' => 'form_fields_advanced_tab',
 				'default' => 'phone_usa',
 				'options' => [
-					'phone_usa' => esc_html__( 'Phone (USA)', 'form-masks-for-elementor' ),
-					'phone_d8' => esc_html__( 'Phone (8-digit)', 'form-masks-for-elementor' ),
-					'phone_ddd8' => esc_html__( 'Phone (DDD + 8-digit)', 'form-masks-for-elementor' ),
-					'phone_ddd9' => esc_html__( 'Phone (DDD + 9-digit)', 'form-masks-for-elementor' ),
+					'phone_usa' => esc_html__( 'Phone (USA)', 'mask-form-elementor' ),
+					'phone_d8' => esc_html__( 'Phone (8-digit)', 'mask-form-elementor' ),
+					'phone_ddd8' => esc_html__( 'Phone (DDD + 8-digit)', 'mask-form-elementor' ),
+					'phone_ddd9' => esc_html__( 'Phone (DDD + 9-digit)', 'mask-form-elementor' ),
 				],
 				'conditions' => [
 						'terms' => [
@@ -286,7 +286,7 @@ class MFE_Elementor_Forms_Mask {
 			'name'            => 'fme_mask_alert_pro_version',
 			'type' => \Elementor\Controls_Manager::ALERT,
 			'alert_type' => 'info',
-			'content' => esc_html__( '🚀 ', 'form-masks-for-elementor' ) . ' <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?ref=mask&utm_source=fim_plugin&utm_medium=inside&utm_campaign=get_pro&utm_content=get_cool_formkit" target="_blank">' . esc_html__( 'Get Cool FormKit For Advanced Fields.', 'form-masks-for-elementor' ) . '</a>',
+			'content' => esc_html__( '🚀 ', 'mask-form-elementor' ) . ' <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?ref=mask&utm_source=fim_plugin&utm_medium=inside&utm_campaign=get_pro&utm_content=get_cool_formkit" target="_blank">' . esc_html__( 'Get ', 'mask-form-elementor' ) . 'Cool FormKit' . esc_html__( ' For Advanced Fields.', 'mask-form-elementor' ) . '</a>',
 			'tab' => 'content',
 			'tabs_wrapper' => 'form_fields_tabs',
 			'inner_tab' => 'form_fields_advanced_tab',
@@ -351,7 +351,7 @@ class MFE_Elementor_Forms_Mask {
 		if ( !is_plugin_active( 'country-code-field-for-elementor-form/country-code-field-for-elementor-form.php' ) && !is_plugin_active( 'conditional-fields-for-elementor-form/class-conditional-fields-for-elementor-form.php' ) && !is_plugin_active( 'conditional-fields-for-elementor-form-pro/class-conditional-fields-for-elementor-form-pro.php' )) {
 			$controls_to_register['fme_country_code_toggle'] = array(
 				'name'            => 'fme_country_code_toggle',
-				'label'        => esc_html__( 'Enable Country Code', 'form-masks-for-elementor' ),
+				'label'        => esc_html__( 'Enable Country Code', 'mask-form-elementor' ),
 				'type'            => Controls_Manager::SWITCHER,
 				'tab'             => 'content',
 				'condition'       => array(
@@ -378,7 +378,7 @@ class MFE_Elementor_Forms_Mask {
 		if ( !is_plugin_active( 'country-code-field-for-elementor-form/country-code-field-for-elementor-form.php' ) && !is_plugin_active( 'conditional-fields-for-elementor-form/class-conditional-fields-for-elementor-form.php' ) && !is_plugin_active( 'conditional-fields-for-elementor-form-pro/class-conditional-fields-for-elementor-form-pro.php' ) ) {
 			$controls_to_register['fme_conditional_field_toggle'] = array(
 				'name'            => 'fme_conditional_field_toggle',
-				'label'        => esc_html__( 'Enable Conditional Fields', 'form-masks-for-elementor' ),
+				'label'        => esc_html__( 'Enable Conditional Fields', 'mask-form-elementor' ),
 				'type'            => Controls_Manager::SWITCHER,
 				'tab'             => 'content',
 				'conditions' => [

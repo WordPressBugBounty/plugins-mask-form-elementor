@@ -5,14 +5,14 @@
  * Plugin URI: https://coolplugins.net/add-input-masks-elementor-form?ref=mask
  * Author: Rodrigo Bogdanowicz
  * Author URI: https://www.bogdanowicz.com.br
- * Version: 4.1.0
+ * Version: 4.1.1
  * Text Domain: mask-form-elementor
  */
 
 defined( 'ABSPATH' ) || die( 'The silence is golden!' );
 
 // Define plugin version and paths.
-define( 'MFE_VERSION', '4.1.0' );
+define( 'MFE_VERSION', '4.1.1' );
 define('MFE_PHP_MINIMUM_VERSION','7.4');
 define('MFE_WP_MINIMUM_VERSION','5.5');
 define( 'MFE_PLUGIN_FILE', __FILE__ );

@@ -87,7 +87,7 @@ class Mask_Form_Elementor {
     }
 
     public function text_domain_path_set(){
-        load_plugin_textdomain( 'mask-form-elementor', false, dirname( plugin_basename( MFE_PLUGIN_FILE ) ) . '/languages' );
+        load_plugin_textdomain( 'mask-form-elementor', false, dirname( plugin_basename( MFE_PLUGIN_FILE ) ) . '/languages/' );
     }
 
     public function migration_setup(){
@@ -127,7 +127,7 @@ class Mask_Form_Elementor {
     public function setup() {
         $stored_version = get_option('mfe-v', false);
 
-        if ( false === $stored_version || version_compare($stored_version, '3.0', '<=') ) {
+        if ( false === $stored_version || version_compare($stored_version, '4.1.0', '<=') ) {
             $this->load_old_deprecate_code();
         }
 

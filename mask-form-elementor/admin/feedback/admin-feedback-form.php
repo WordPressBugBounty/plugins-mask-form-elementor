@@ -49,24 +49,24 @@ class mfe_feedback {
 		}
 		$deactivate_reasons = array(
 			'didnt_work_as_expected'         => array(
-				'title'             => __( 'The plugin didn\'t work as expected.', 'form-masks-for-elementor' ),
+				'title'             => __( 'The plugin didn\'t work as expected.', 'mask-form-elementor' ),
 				'input_placeholder' => 'What did you expect?',
 			),
 			'found_a_better_plugin'          => array(
-				'title'             => __( 'I found a better plugin.', 'form-masks-for-elementor' ),
-				'input_placeholder' => __( 'Please share which plugin.', 'form-masks-for-elementor' ),
+				'title'             => __( 'I found a better plugin.', 'mask-form-elementor' ),
+				'input_placeholder' => __( 'Please share which plugin.', 'mask-form-elementor' ),
 			),
 			'couldnt_get_the_plugin_to_work' => array(
-				'title'             => __( 'The plugin is not working.', 'form-masks-for-elementor' ),
+				'title'             => __( 'The plugin is not working.', 'mask-form-elementor' ),
 				'input_placeholder' => 'Please share your issue. So we can fix that for other users.',
 			),
 			'temporary_deactivation'         => array(
-				'title'             => __( 'It\'s a temporary deactivation.', 'form-masks-for-elementor' ),
+				'title'             => __( 'It\'s a temporary deactivation.', 'mask-form-elementor' ),
 				'input_placeholder' => '',
 			),
 			'other'                          => array(
-				'title'             => __( 'Other reason.', 'form-masks-for-elementor' ),
-				'input_placeholder' => __( 'Please share the reason.', 'form-masks-for-elementor' ),
+				'title'             => __( 'Other reason.', 'mask-form-elementor' ),
+				'input_placeholder' => __( 'Please share the reason.', 'mask-form-elementor' ),
 			),
 		);
 
@@ -76,7 +76,7 @@ class mfe_feedback {
 			<div class="cp-feedback-wrapper">
 
 			<div class="cp-feedback-header">
-				<div class="cp-feedback-title"><?php echo esc_html__( 'Quick Feedback', 'form-masks-for-elementor' ); ?></div>
+				<div class="cp-feedback-title"><?php echo esc_html__( 'Quick Feedback', 'mask-form-elementor' ); ?></div>
 				<div class="cp-feedback-title-link">A plugin by <a href="https://coolplugins.net/?utm_source=<?php echo esc_attr( $this->plugin_slug ); ?>_plugin&utm_medium=inside&utm_campaign=coolplugins&utm_content=deactivation_feedback" target="_blank">CoolPlugins.net</a></div>
 			</div>
 
@@ -85,7 +85,7 @@ class mfe_feedback {
 			</div>
 
 			<div class="cp-feedback-form-wrapper">
-				<div class="cp-feedback-form-title"><?php echo esc_html__( 'If you have a moment, please share the reason for deactivating this plugin.', 'form-masks-for-elementor' ); ?></div>
+				<div class="cp-feedback-form-title"><?php echo esc_html__( 'If you have a moment, please share the reason for deactivating this plugin.', 'mask-form-elementor' ); ?></div>
 				<form class="cp-feedback-form" method="post">
 					<?php
 					wp_nonce_field( '_cool-plugins_deactivate_feedback_nonce' );
@@ -106,7 +106,7 @@ class mfe_feedback {
 					<?php endforeach; ?>
 					
 					<div class="cp-feedback-terms">
-					<input class="cp-feedback-terms-input" id="cp-feedback-terms-input" type="checkbox"><label for="cp-feedback-terms-input"><?php echo esc_html__( 'I agree to share my feedback with Cool Plugins, including site URL and admin email, to enable them to address my inquiry.', 'form-masks-for-elementor' ); ?></label>
+					<input class="cp-feedback-terms-input" id="cp-feedback-terms-input" type="checkbox"><label for="cp-feedback-terms-input"><?php echo esc_html__( 'I agree to share my feedback with Cool Plugins, including site URL and admin email, to enable them to address my inquiry.', 'mask-form-elementor' ); ?></label>
 					</div>
 
 					<div class="cp-feedback-button-wrapper">
@@ -130,24 +130,24 @@ class mfe_feedback {
 			$reason             = isset( $_POST['reason'] ) ? sanitize_text_field( $_POST['reason'] ) : '';
 			$deactivate_reasons = array(
 				'didnt_work_as_expected'         => array(
-					'title'             => __( 'The plugin didn\'t work as expected', 'form-masks-for-elementor' ),
+					'title'             => __( 'The plugin didn\'t work as expected', 'mask-form-elementor' ),
 					'input_placeholder' => 'What did you expect?',
 				),
 				'found_a_better_plugin'          => array(
-					'title'             => __( 'I found a better plugin', 'form-masks-for-elementor' ),
-					'input_placeholder' => __( 'Please share which plugin.', 'form-masks-for-elementor' ),
+					'title'             => __( 'I found a better plugin', 'mask-form-elementor' ),
+					'input_placeholder' => __( 'Please share which plugin.', 'mask-form-elementor' ),
 				),
 				'couldnt_get_the_plugin_to_work' => array(
-					'title'             => __( 'The plugin is not working', 'form-masks-for-elementor' ),
+					'title'             => __( 'The plugin is not working', 'mask-form-elementor' ),
 					'input_placeholder' => 'Please share your issue. So we can fix that for other users.',
 				),
 				'temporary_deactivation'         => array(
-					'title'             => __( 'It\'s a temporary deactivation.', 'form-masks-for-elementor' ),
+					'title'             => __( 'It\'s a temporary deactivation.', 'mask-form-elementor' ),
 					'input_placeholder' => '',
 				),
 				'other'                          => array(
 					'title'             => __( 'Other', 'cool-plugins' ),
-					'input_placeholder' => __( 'Please share the reason.', 'form-masks-for-elementor' ),
+					'input_placeholder' => __( 'Please share the reason.', 'mask-form-elementor' ),
 				),
 			);
 

@@ -18,8 +18,8 @@ class MFE_Elementor_Page {
     public function add_settings_page() {
             add_submenu_page(
                 'elementor',
-                __('Cool Formkit', 'form-masks-for-elementor'),
-                __('Cool Formkit', 'form-masks-for-elementor'),
+                'Cool Formkit',
+                'Cool Formkit',
                 'manage_options',
                 'cool-formkit',
                 array($this, 'settings_page_content')
