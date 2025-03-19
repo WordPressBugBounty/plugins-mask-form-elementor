@@ -4,11 +4,11 @@ Tags: elementor form, mask, input masks, elementor, formulario
 Requires at least: 5.0
 Tested up to: 6.7.2
 Requires PHP: 7.2
-Stable tag: 4.1.1
+Stable tag: 4.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Elementor tested up to: 3.27.6
-Elementor Pro tested up to: 3.27.6
+Elementor tested up to: 3.28.0
+Elementor Pro tested up to: 3.28.0
 
 Elementor Form Input Mask – Add phone number formatting, date and time masks, credit card masks, CPF, CNPJ, CEP (Brazilian formats), and more.
 
@@ -145,6 +145,10 @@ We will continue to expand the list of supported input masks in future updates b
 — —————————————- —
 
 == Changelog ==
+
+### Version 4.1.2 | 19/03/2025
+**Tested upto:** 
+- Elementor Version 3.28.0 and Elementor Pro Version 3.28.0.
 
 ### Version 4.1.1 | 13/03/2025
 **Added:**

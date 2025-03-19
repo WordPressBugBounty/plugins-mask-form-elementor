@@ -16,14 +16,16 @@ class MFE_Elementor_Page {
 
     // Add the settings page to Elementor's menu
     public function add_settings_page() {
-            add_submenu_page(
-                'elementor',
-                'Cool Formkit',
-                'Cool Formkit',
-                'manage_options',
-                'cool-formkit',
-                array($this, 'settings_page_content')
-            );
+            if(!is_plugin_active( 'cool-formkit-for-elementor-forms/cool-formkit-for-elementor-forms.php' )){
+                add_submenu_page(
+                    'elementor',
+                    'Cool Formkit',
+                    'Cool Formkit',
+                    'manage_options',
+                    'cool-formkit',
+                    array($this, 'settings_page_content')
+                );
+            }
     }
 
     // Output the content of the settings page
