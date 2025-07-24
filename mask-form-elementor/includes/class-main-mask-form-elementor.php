@@ -47,17 +47,81 @@ class Mask_Form_Elementor {
             add_action( 'template_redirect', array( $this, 'migration_setup' ),1 );
             add_action( 'init', array( $this, 'text_domain_path_set' ) );
             add_action( 'activated_plugin', array( $this, 'mfe_plugin_redirection' ) );
+
+            
             add_filter( 'plugin_action_links_' . plugin_basename( MFE_PLUGIN_FILE ), array( $this, 'mfe_pro_plugin_demo_link' ) );
+
+            add_filter( 'plugin_action_links_' . plugin_basename( MFE_PLUGIN_FILE ), array( $this, 'mfe_plugin_settings_link' ) );
+
             add_filter( 'plugin_row_meta', array( $this, 'mfe_plugin_row_meta' ), 10, 2 );
+
+			add_action( 'plugins_loaded',array($this,'plugin_loads'));
+
+
+            $this->includes();
+
             
 		}
     }
+
+    public function plugin_loads(){
+
+		if(!class_exists('CPFM_Feedback_Notice')){
+			require_once MFE_PLUGIN_PATH . 'admin/feedback/cpfm-common-notice.php';
+		}
+
+        add_action('cpfm_register_notice', function () {
+            
+            if (!class_exists('\CPFM_Feedback_Notice') || !current_user_can('manage_options')) {
+                return;
+            }
+
+            $notice = [
+
+                'title' => __('Elementor Form Addons by Cool Plugins', 'cool-formkit-for-elementor-forms'),
+                'message' => __('Help us make this plugin more compatible with your site by sharing non-sensitive site data.', 'cool-plugins-feedback'),
+                'pages' => ['cool-formkit','cfkef-entries','cool-formkit&tab=recaptcha-settings'],
+                'always_show_on' => ['cool-formkit','cfkef-entries','cool-formkit&tab=recaptcha-settings'], // This enables auto-show
+                'plugin_name'=>'mfe'
+            ];
+
+            \CPFM_Feedback_Notice::cpfm_register_notice('cool_forms', $notice);
+
+                if (!isset($GLOBALS['cool_plugins_feedback'])) {
+                    $GLOBALS['cool_plugins_feedback'] = [];
+                }
+                
+                $GLOBALS['cool_plugins_feedback']['cool_forms'][] = $notice;
+           
+            });
+        
+        add_action('cpfm_after_opt_in_mfe', function($category) {
+
+                
+                if ($category === 'cool_forms') {
+
+                    require_once MFE_PLUGIN_PATH . 'admin/feedback/cron/mfe-class-cron.php';
+
+                    mfe_cronjob::mfe_send_data();
+                    update_option( 'cfef_usage_share_data','on' );   
+                } 
+        });
+	}
+
+    private function includes() {
+
+		require_once MFE_PLUGIN_PATH . 'admin/feedback/cron/mfe-class-cron.php';
+		
+	}
 
 
     public function mfe_plugin_row_meta($plugin_meta, $plugin_file){
         if ( plugin_basename( MFE_PLUGIN_FILE ) === $plugin_file ) {
             $row_meta = array(
                 'Maintained By <a href="' . esc_url('https://coolplugins.net/?ref=mask&utm_source=cfkef_plugin&utm_medium=inside&utm_campaign=docs&utm_content=plugins-list') . '" aria-label="' . esc_attr__('View Form Mask Documentation', 'cool-formkit') . '" target="_blank">' . esc_html__('Cool Plugins', 'cool-formkit') . '</a>',
+                
+                '<a href="https://coolplugins.net/add-input-masks-elementor-form/?utm_source=fme_plugin&utm_medium=inside&utm_campaign=demo&utm_content=plugins-dashboard/" aria-label="' . esc_attr( esc_html__( 'Input Mask Documentation', '' ) ) . '" target="_blank">' . esc_html__( 'Docs & FAQs', 'mfe' ) . '</a>'
+                ,
             );
     
             $plugin_meta = array_merge($plugin_meta, $row_meta);
@@ -80,11 +144,19 @@ class Mask_Form_Elementor {
 		}	
     }
 
-    public function mfe_pro_plugin_demo_link($link){
-        $settings_link = '<a href="' . admin_url( 'admin.php?page=cool-formkit' ) . '">Cool FormKit</a>';
-		array_unshift( $link, $settings_link );
-		return $link;
+    public function mfe_pro_plugin_demo_link($links){
+        $get_pro_link = '<a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=mfe_plugin&utm_medium=inside&utm_campaign=demo&utm_content=plugins-dashboard#pricing" style="font-weight: bold; color: green;" target="_blank">Get Pro</a>';
+		array_unshift( $links, $get_pro_link );
+		return $links;
     }
+
+    public function mfe_plugin_settings_link($links){
+        $settings_link = '<a href="' . admin_url( 'admin.php?page=cool-formkit' ) . '">Settings</a>';
+		array_unshift( $links, $settings_link );
+		return $links;
+    }
+
+    
 
     public function text_domain_path_set(){
         load_plugin_textdomain( 'mask-form-elementor', false, dirname( plugin_basename( MFE_PLUGIN_FILE ) ) . '/languages/' );
@@ -135,8 +207,13 @@ class Mask_Form_Elementor {
 			require_once MFE_PLUGIN_PATH . 'admin/feedback/admin-feedback-form.php';
 		}
 
-        require_once MFE_PLUGIN_PATH . 'includes/class-plugin-input-mask.php';
-        MFE_Plugin::instance();
+        if(get_option("form_input_mask", true)){
+
+            require_once MFE_PLUGIN_PATH . 'includes/class-plugin-input-mask.php';
+            MFE_Plugin::instance();
+        }
+
+
 
         require_once MFE_PLUGIN_PATH . '/includes/class-plugin-elementor-page.php';
         new MFE_Elementor_Page();
@@ -384,9 +461,33 @@ class Mask_Form_Elementor {
 		update_option( 'mfe-v', MFE_VERSION );
 		update_option( 'mfe-type', 'FREE' );
 		update_option( 'mfe-installDate', gmdate( 'Y-m-d h:i:s' ) );
+
+        if(!get_option( 'mfe-install-date' ) ) {
+				add_option( 'mfe-install-date', gmdate('Y-m-d h:i:s') );
+        	}
+
+
+			$settings       = get_option('cfef_usage_share_data');
+
+			
+			if (!empty($settings) || $settings === 'on'){
+				
+				static::mfe_cron_job_init();
+			}
 	}
 
+     public static function mfe_cron_job_init()
+		{
+			if (!wp_next_scheduled('mfe_extra_data_update')) {
+				wp_schedule_event(time(), 'every_30_days', 'mfe_extra_data_update');
+			}
+		}
+
 	public static function mfe_deactivate(){
+
+        if (wp_next_scheduled('mfe_extra_data_update')) {
+            	wp_clear_scheduled_hook('mfe_extra_data_update');
+        }
 	}
 }
 

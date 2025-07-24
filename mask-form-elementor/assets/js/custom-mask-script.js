@@ -583,25 +583,72 @@
         }
       
         // ----------------- Form Submit -----------------
-        $(document).on("click", ".elementor-field-type-submit", function(e){
-            var $form = $(this).closest("form"); 
-            $form.find("input").trigger("blur"); 
-            
-            var $errors = $form.find(".mask-error").filter(function() { 
-                return $(this).text().trim() !== ""; 
-            });
+        
 
-            if($errors.length > 0){
-              $errors.each(function(){
-                if($(this)[0].style.display !== 'none'){
-                    e.preventDefault(); 
-                    $('html, body').animate({
-                        scrollTop: $(this).offset().top - 200 
-                    }, 500);
-                }
-              })
-            }
-        })
+        $(document).on("click", ".elementor-field-type-submit", function (e) {
+        var $submitBtn = $(this);
+        var $form = $submitBtn.closest("form");
+
+        // Prevent double-clicks
+        if ($submitBtn.data("clicked")) {
+          e.preventDefault();
+          return;
+        }
+        $submitBtn.data("clicked", true); // Mark as clicked
+
+        // Trigger blur on inputs to ensure validation runs
+        $form.find("input").trigger("blur");
+
+        // Add Elementor waiting class
+        $form[0].classList.add("elementor-form-waiting");
+
+        // Wait for mask errors or blur logic to complete
+        setTimeout(() => {
+          let hasVisibleMaskError = false;
+
+          // Check for visible mask error messages
+          const $errors = $form.find(".mask-error").filter(function () {
+            return $(this).text().trim() !== "" && $(this).is(":visible");
+          });
+
+          if ($errors.length > 0) {
+            hasVisibleMaskError = true;
+            const $firstError = $errors.first();
+            $("html, body").animate({
+              scrollTop: $firstError.offset().top - 200
+            }, 300);
+          }
+
+          // ✅ Check for empty required masked fields
+          const $emptyRequiredMasked = $form.find("input[required]").filter(function () {
+            const val = $(this).val().trim();
+            const isVisible = $(this).is(":visible");
+            return isVisible && (val === "" || /^[\s_\-\(\)\.:/]+$/.test(val));
+          });
+
+          if ($emptyRequiredMasked.length > 0) {
+            hasVisibleMaskError = true;
+            const $firstEmpty = $emptyRequiredMasked.first();
+            $("html, body").animate({
+              scrollTop: $firstEmpty.offset().top - 200
+            }, 300);
+            $firstEmpty.focus();
+          }
+
+          // ❌ Validation failed
+          if (hasVisibleMaskError || !$form[0].checkValidity()) {
+            $form[0].classList.remove("elementor-form-waiting");
+            $submitBtn.data("clicked", false);
+            e.preventDefault();
+            return;
+          }
+
+          // ✅ All good — submit the form
+          $form[0].classList.remove("elementor-form-waiting");
+          $form[0].requestSubmit();
+          $submitBtn.data("clicked", false);
+        }, 500);
+      });
       
     });
 })(jQuery);
