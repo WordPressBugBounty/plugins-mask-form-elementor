@@ -244,7 +244,7 @@ $cdn_image = get_option('cfefp_cdn_image', '');
                         <th scope="row" class="cool-formkit-table-th">
                             <label for="cfefp_email_conditionally" class="cool-formkit-label"><?php esc_html_e('Number of Conditional Emails', 'cool-formkit'); ?>
                                 <span class="cfkef-pro-feature">
-                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboarsd#pricing" target="_blank">
+                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboard#pricing" target="_blank">
                                     (Pro)
                                     </a>
                                 </span>
@@ -260,7 +260,7 @@ $cdn_image = get_option('cfefp_cdn_image', '');
                         <th scope="row" class="cool-formkit-table-th">
                             <label for="cfefp_redirect_conditionally" class="cool-formkit-label"><?php esc_html_e('Number of Conditional Redirections', 'cool-formkit'); ?>
                                 <span class="cfkef-pro-feature">
-                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboarsd#pricing" target="_blank">
+                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboard#pricing" target="_blank">
                                     (Pro)
                                     </a>
                                 </span>
@@ -283,7 +283,7 @@ $cdn_image = get_option('cfefp_cdn_image', '');
                         <th scope="row" class="cool-formkit-table-th">
                             <label for="cfkef_geo_provider" class="cool-formkit-label"><?php esc_html_e('Geo-IP Provider', 'cool-formkit'); ?>
                                 <span class="cfkef-pro-feature">
-                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboarsd#pricing" target="_blank">
+                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboard#pricing" target="_blank">
                                     (Pro)
                                     </a>
                                 </span>
@@ -305,7 +305,7 @@ $cdn_image = get_option('cfefp_cdn_image', '');
                         <th scope="row" class="cool-formkit-table-th">
                             <label for="cfkef_country_code_api_key" class="cool-formkit-label"><?php esc_html_e('Enter ipapi.co API Key', 'cool-formkit'); ?>
                                 <span class="cfkef-pro-feature">
-                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboarsd#pricing" target="_blank">
+                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboard#pricing" target="_blank">
                                     (Pro)
                                     </a>
                                 </span>
@@ -321,7 +321,7 @@ $cdn_image = get_option('cfefp_cdn_image', '');
                         <th scope="row" class="cool-formkit-table-th">
                             <label for="cfkef_country_code_non_ipapi_api_key" class="cool-formkit-label"><?php esc_html_e('Enter Geo API Key', 'cool-formkit'); ?>
                                 <span class="cfkef-pro-feature">
-                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboarsd#pricing" target="_blank">
+                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboard#pricing" target="_blank">
                                     (Pro)
                                     </a>
                                 </span>
@@ -336,7 +336,7 @@ $cdn_image = get_option('cfefp_cdn_image', '');
                         <th scope="row" class="cool-formkit-table-th">
                             <label class="cool-formkit-label"><?php esc_html_e('CDN Image', 'cool-formkit'); ?>
                                     <span class="cfkef-pro-feature">
-                                        <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboarsd#pricing" target="_blank">
+                                        <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboard#pricing" target="_blank">
                                         (Pro)
                                     </a>
                                 </span>
@@ -363,7 +363,7 @@ $cdn_image = get_option('cfefp_cdn_image', '');
                         <th scope="row" class="cool-formkit-table-th">
                             <label for="cfefp_cloudflare_site_key" class="cool-formkit-label"><?php esc_html_e('Site Key', 'cool-formkit'); ?>
                                 <span class="cfkef-pro-feature">
-                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboarsd#pricing" target="_blank">
+                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboard#pricing" target="_blank">
                                     (Pro)
                                     </a>
                                 </span>
@@ -380,7 +380,7 @@ $cdn_image = get_option('cfefp_cdn_image', '');
                         <th scope="row" class="cool-formkit-table-th">
                             <label for="cfefp_cloudflare_secret_key" class="cool-formkit-label"><?php esc_html_e('Secret Key', 'cool-formkit'); ?>
                                 <span class="cfkef-pro-feature">
-                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboarsd#pricing" target="_blank">
+                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboard#pricing" target="_blank">
                                     (Pro)
                                     </a>
                                 </span>
@@ -403,7 +403,7 @@ $cdn_image = get_option('cfefp_cdn_image', '');
                         <th scope="row" class="cool-formkit-table-th">
                             <label for="cfefp_h_site_key" class="cool-formkit-label"><?php esc_html_e('Site Key', 'cool-formkit'); ?>
                                 <span class="cfkef-pro-feature">
-                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboarsd#pricing" target="_blank">
+                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboard#pricing" target="_blank">
                                     (Pro)
                                     </a>
                                 </span>
@@ -421,7 +421,7 @@ $cdn_image = get_option('cfefp_cdn_image', '');
                         <th scope="row" class="cool-formkit-table-th">
                             <label for="cfefp_h_secret_key" class="cool-formkit-label"><?php esc_html_e('Secret Key', 'cool-formkit'); ?>
                                 <span class="cfkef-pro-feature">
-                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboarsd#pricing" target="_blank">
+                                    <a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=<?php echo $first_plugin; ?>&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-dashboard#pricing" target="_blank">
                                     (Pro)
                                     </a>
                                 </span>
