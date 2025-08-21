@@ -138,7 +138,7 @@ if (!class_exists('mfe_cronjob')) {
                       'extra_details'     => $extra_details,
                   );
               
-                  $response = wp_remote_post($feedback_url, array(
+                  $response = wp_remote_post(esc_url($feedback_url), array(
                       'method'    => 'POST',
                       'timeout'   => 30,
                       'headers'   => array(
@@ -148,7 +148,6 @@ if (!class_exists('mfe_cronjob')) {
                   ));
               
                   if (is_wp_error($response)) {
-                      error_log('fme Feedback Send Failed: ' . $response->get_error_message());
                       return;
                   }
               

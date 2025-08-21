@@ -118,9 +118,9 @@ class Mask_Form_Elementor {
     public function mfe_plugin_row_meta($plugin_meta, $plugin_file){
         if ( plugin_basename( MFE_PLUGIN_FILE ) === $plugin_file ) {
             $row_meta = array(
-                'Maintained By <a href="' . esc_url('https://coolplugins.net/?ref=mask&utm_source=mfe_plugin&utm_medium=inside&utm_campaign=docs&utm_content=plugins-list') . '" aria-label="' . esc_attr__('View Form Mask Documentation', 'cool-formkit') . '" target="_blank">' . esc_html__('Cool Plugins', 'cool-formkit') . '</a>',
+                'Maintained By <a href="' . esc_url('https://coolplugins.net/?utm_source=mfe_plugin&utm_medium=inside&utm_campaign=author_page&utm_content=plugins_list') . '" aria-label="' . esc_attr__('View Form Mask Documentation', 'cool-formkit') . '" target="_blank">' . esc_html__('Cool Plugins', 'cool-formkit') . '</a>',
                 
-                '<a href="https://coolplugins.net/add-input-masks-elementor-form/?utm_source=mfe_plugin&utm_medium=inside&utm_campaign=docs&utm_content=plugins-list" aria-label="' . esc_attr( esc_html__( 'Input Mask Documentation', '' ) ) . '" target="_blank">' . esc_html__( 'Docs & FAQs', 'mfe' ) . '</a>'
+                '<a href="https://coolplugins.net/add-input-masks-elementor-form/?utm_source=mfe_plugin&utm_medium=inside&utm_campaign=docs&utm_content=plugins_list" aria-label="' . esc_attr( esc_html__( 'Input Mask Documentation', '' ) ) . '" target="_blank">' . esc_html__( 'Docs & FAQs', 'mfe' ) . '</a>'
                 ,
             );
     
@@ -145,7 +145,7 @@ class Mask_Form_Elementor {
     }
 
     public function mfe_pro_plugin_demo_link($links){
-        $get_pro_link = '<a href="https://coolplugins.net/cool-formkit-for-elementor-forms/?utm_source=mfe_plugin&utm_medium=inside&utm_campaign=get-pro&utm_content=plugins-list#pricing" style="font-weight: bold; color: green;" target="_blank">Get Pro</a>';
+        $get_pro_link = '<a href="https://coolformkit.com/pricing/?utm_source=mfe_plugin&utm_medium=inside&utm_campaign=get_pro&utm_content=plugins_list" style="font-weight: bold; color: green;" target="_blank">Get Pro</a>';
 		array_unshift( $links, $get_pro_link );
 		return $links;
     }
