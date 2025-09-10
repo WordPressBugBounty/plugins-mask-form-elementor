@@ -49,9 +49,7 @@ class Mask_Form_Elementor {
             add_action( 'activated_plugin', array( $this, 'mfe_plugin_redirection' ) );
 
             
-            add_filter( 'plugin_action_links_' . plugin_basename( MFE_PLUGIN_FILE ), array( $this, 'mfe_pro_plugin_demo_link' ) );
-
-            add_filter( 'plugin_action_links_' . plugin_basename( MFE_PLUGIN_FILE ), array( $this, 'mfe_plugin_settings_link' ) );
+            
 
             add_filter( 'plugin_row_meta', array( $this, 'mfe_plugin_row_meta' ), 10, 2 );
 
@@ -66,8 +64,19 @@ class Mask_Form_Elementor {
 
     public function plugin_loads(){
 
+
+        add_filter( 'plugin_action_links_' . plugin_basename( MFE_PLUGIN_FILE ), array( $this, 'mfe_pro_plugin_demo_link' ) );
+
+            add_filter( 'plugin_action_links_' . plugin_basename( MFE_PLUGIN_FILE ), array( $this, 'mfe_plugin_settings_link' ) );
+
+
 		if(!class_exists('CPFM_Feedback_Notice')){
 			require_once MFE_PLUGIN_PATH . 'admin/feedback/cpfm-common-notice.php';
+		}
+
+        if ( did_action( 'elementor/loaded' ) && class_exists( '\Elementor\Plugin' ) ) {
+
+			require_once MFE_PLUGIN_PATH . '/admin/marketing/mfe-marketing-common.php';
 		}
 
         add_action('cpfm_register_notice', function () {
@@ -331,14 +340,14 @@ class Mask_Form_Elementor {
 			return false;
 		}
 
-		// if ( is_plugin_active( 'cool-formkit-for-elementor-forms/cool-formkit-for-elementor-forms.php' ) ) {
-		// 	return false;
-		// }
+		if ( is_plugin_active( 'cool-formkit-for-elementor-forms/cool-formkit-for-elementor-forms.php' ) ) {
+			return false;
+		}
 
-		// if ( ! is_plugin_active( 'elementor-pro/elementor-pro.php' ) ) {
-		// 	add_action('admin_notices', array($this, 'admin_notice_missing_main_plugin'));
-		// 	return false;
-		// }
+		if ( ! is_plugin_active( 'elementor-pro/elementor-pro.php' ) ) {
+			add_action('admin_notices', array($this, 'admin_notice_missing_main_plugin'));
+			return false;
+		}
 
 		return true;
 	}

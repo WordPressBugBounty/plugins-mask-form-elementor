@@ -1,131 +1,101 @@
 === Input Mask Elementor Form Fields ===
 Contributors: coolplugins, narinder-singh, satindersingh, rodrigo-bogdanowicz
-Tags: elementor form, mask, input masks, elementor, formulario
+Donate link: https://donate.stripe.com/5kQdR92iBevO75WbPm6c00i
+Tags: mask, input masks, elementor form, elementor, elementor form builder
 Requires at least: 5.0
 Tested up to: 6.8.2
 Requires PHP: 7.2
-Stable tag: 4.2.2
+Stable tag: 4.2.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Elementor tested up to: 3.31.2
-Elementor Pro tested up to: 3.31.2
+Elementor tested up to: 3.31.4
+Elementor Pro tested up to: 3.31.3
 
-Elementor Form Input Mask – Add phone number formatting, date and time masks, credit card masks, CPF, CNPJ, CEP (Brazilian formats), and more.
+Apply input masks in Elementor form widget fields - phone, date, time, credit card, CPF, CNPJ, CEP & more for valid and error-free entries.
 
 == Description ==
 
-**Using Elementor Form Widget and need to apply formatting to form text fields for better validation?**
+**Input Mask Elementor Form Fields** is an Elementor addon that helps to add **[input masks](https://coolformkit.com/features/input-mask-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=features&utm_content=top_name)** on Elementor form fields. It helps you control how users enter data into form fields, ensuring properly formatted entries for phone numbers, credit cards, dates, Brazilian IDs, and more.  
 
-Apply **input masks** to Elementor form fields, allowing users to enter data in predefined formats for better validation and user experience.
+Originally developed by **[Rodrigo Bogdanowicz](https://profiles.wordpress.org/rodrigo-bogdanowicz/)**, this plugin is now actively maintained and supported by the **[Cool Plugins team](https://coolplugins.net/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=author&utm_content=author)**, who continue to add new features, bug fixes, and compatibility updates.  
 
-* Supports various input mask options, including phone number masking, credit card masks, date/time masks and more.
-* Works exclusively with **Elementor Pro**, as the form widget is only available in Elementor Pro version.
+This plugin works with **Elementor Pro** and the **Hello Plus** form widget. Simply edit your Elementor form, select a text field, and apply the desired mask.  
 
-— —————————————- —
-🔗 **VIEW [INPUT MASK DEMO](https://coolplugins.net/add-input-masks-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=blog&utm_content=plugin-demo)**
-— —————————————- —
+👉 **[Check Live Demo](https://coolplugins.net/add-input-masks-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=demo&utm_content=view_demo)**  
 
-https://youtu.be/S6kwtxizgYM
+https://youtu.be/S6kwtxizgYM  
 
-Additionally, you can expand Elementor form widget features with  **[Cool FormKit](https://coolplugins.net/cool-formkit-for-elementor-forms/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get-pro-cfk&utm_content=note)** that adds many advanced fields inside your Elementor form like: [Range Slider](https://coolplugins.net/add-range-slider-elementor-forms/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=blog&utm_content=note), [Calculator field](https://coolplugins.net/interest-or-loan-calculator-elementor/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=blog&utm_content=note), [Rating field](https://coolplugins.net/add-rating-field-elementor-form-widget/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=blog&utm_content=note), [Signature field](https://coolplugins.net/add-signature-field-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=blog&utm_content=note), [Conditional fields](https://coolplugins.net/conditional-fields-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=blog&utm_content=note) and more.
+Need more advanced Elementor form fields? Extend your forms with **[Cool FormKit](https://coolformkit.com/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=below_video)** (aka *coolformkit*). With Cool FormKit, you can add:  
 
-### INPUT MASKS SUPPORTED BY PLUGIN
-— —————————————- —
+* [Range Sliders](https://docs.coolplugins.net/doc/range-slider-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=docs&utm_content=faqs)  
+* [Calculator Fields](https://docs.coolplugins.net/doc/calculator-field-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=docs&utm_content=faqs)  
+* [Signature Fields](https://docs.coolplugins.net/doc/signature-field-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=docs&utm_content=faqs)  
+* [Rating Fields](https://docs.coolplugins.net/doc/rating-field-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=docs&utm_content=faqs)  
+* [Conditional Logic](https://docs.coolplugins.net/doc/apply-conditional-logic-on-elementor-form-fields/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=docs&utm_content=faqs)  
+* Spam protection with [hCaptcha](https://docs.coolplugins.net/doc/add-hcaptcha-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=docs&utm_content=faqs) and [Cloudflare Turnstile](https://docs.coolplugins.net/doc/add-cloudflare-turnstile-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=docs&utm_content=faqs)  
 
-✅ **Phone Masks:** Supports various phone number formats for different regions, including the USA, Brazil, and others.
+---
 
-* 0000-0000
-* (000) 000-0000
-* (00) 0000-0000
-* (00) 0.0000-0000
+### Supported Input Masks  
 
-✅ **Credit Card Mask:** Helps to format and validate credit card details.
+**Phone Masks:** Add common phone number formats such as USA, Brazil, and more.
 
-* **Credit Card Mask:** 0000-0000-0000-0000
-* **Credit Card Expiry Date Mask:** 00/00
+* 0000-0000  
+* (000) 000-0000  
+* (00) 0000-0000  
+* (00) 0.0000-0000  
 
-✅ **Date & Time Masks:** Maintain consistency for date and time inputs and ensure they follow a fixed pattern
+**Credit Card Masks:** Format card numbers and expiry dates.
 
-* **Date:** 00/00/0000
-* **Time:** 00:00:00
-* **Date and Time:** 00/00/0000 00:00:00
+* Card: 0000-0000-0000-0000  
+* Expiry: 00/00  
 
-✅ **Currency Mask:** Standardize input formatting for money entry.
+**Date & Time Masks:** Keep date and time inputs consistent.
 
-* **Comma Separator:** 00,000.00
-* **Dot Separator:** 00.000,00
+* Date: 00/00/0000  
+* Time: 00:00:00  
+* Date & Time: 00/00/0000 00:00:00  
 
-✅ **CPF, CNPJ, CEP (Brazilian Formats):** Accurately capture inputs for official Brazilian IDs and postal codes.
+**Currency Masks:** Enforce correct money formats.
 
-* **CPF (Brazilian ID):** 000.000.000-00 
-* **CNPJ (Brazilian Company ID):** 00.000.000/0000-00
-*  **Postal Code (CEP):** 00000-000
+* Comma style: 00,000.00  
+* Dot style: 00.000,00  
 
-### ABOUT PLUGIN AUTHOR
-— —————————————- —
+**Brazilian Formats (CPF, CNPJ, CEP):** Capture accurate Brazilian IDs.
 
-This plugin was originally published by [Rodrigo Bogdanowicz](https://profiles.wordpress.org/rodrigo-bogdanowicz/) in 2020. Now, it is **maintained by [Cool Plugins](https://coolplugins.net/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=homepage&utm_content=author)**, ensuring **regular updates and dedicated support**.  
+* CPF: 000.000.000-00  
+* CNPJ: 00.000.000/0000-00  
+* CEP: 00000-000  
 
-With a team of **20+ expert WordPress developers**, Cool Plugins has developed numerous **free and premium plugins**, earning **1,000+ five-star reviews** and powering **300,000+ websites** worldwide. Explore some of their **top-rated Elementor addons** designed to enhance and extend Elementor functionality below:  
+---
 
-📝 **[Cool FormKit For Elementor](https://coolplugins.net/cool-formkit-for-elementor-forms/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get-pro-cfk&utm_content=more-plugins)**  
+### More Addons for Elementor Forms  
 
-* Add advanced fields like conditional logic, range sliders, calculator fields, and country code selection to Elementor forms.
+* **[Conditional Fields for Elementor Form](https://coolplugins.net/product/conditional-fields-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=elementor_form_addons)** – Add conditional logic to show, hide, enable, or disable fields dynamically.  
 
-🔥 **[Conditional Fields For Elementor Form](https://coolplugins.net/product/conditional-fields-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get-pro-cfe&utm_content=more-plugins)**  
+* **[Country Code for Elementor Form Telephone Field](https://wordpress.org/plugins/country-code-field-for-elementor-form/)** – Add a dropdown with country codes and flags for phone fields.  
 
-* An essential addon for Elementor forms that allows you to add conditional logic to input fields, enabling fields to show/hide based user input.
+* **[Cool FormKit](https://coolformkit.com/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=elementor_form_addons)** – A complete Elementor form builder addon that extends Pro forms and adds a full widget for Elementor Free.  
 
-📞 **[Country Code For Elementor Form Telephone Field](https://coolplugins.net/add-country-code-telephone-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=blog&utm_content=more-plugins)**  
+---
 
-* Enhances phone fields with a country code selection feature for accurate data input.
+### Other Popular Elementor Addons by Cool Plugins  
 
-📜 **[Timeline Widget for Elementor](https://cooltimeline.com/plugin/timeline-widget-pro/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get-pro-twe&utm_content=more-plugins)**
+* **[Timeline Widget for Elementor](https://cooltimeline.com/plugin/timeline-widget-pro/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=other_addons)** – Create stunning vertical and horizontal timelines inside Elementor editor easily.  
+* **[Events Widgets for Elementor](https://eventscalendaraddons.com/plugin/events-widgets-pro/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=other_addons)** – Add The Events Calendar in Elementor pages easily via using these events widgets.  
+* **[AutoPoly – AI Translation for Polylang](https://coolplugins.net/product/autopoly-ai-translation-for-polylang/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=other_addons)** – Translate Elementor websites automatically via AI and Polylang plugin.  
+* **[Loop Grid Extender for Elementor Pro](https://wordpress.org/plugins/loop-grid-extender-for-elementor-pro/)** – Add ACF repeater support and advanced taxonomy filters in Elementor loop builder.  
+* **[LocoAI – Auto Translate for Loco Translate](https://locoaddon.com/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=other_addons)** – AI-powered string translation for plugins and themes inside Loco Translate.  
 
-* Use this plugin to showcase your history in a stylish vertical or horizontal timeline layout on Elementor pages.
+---
 
-📅 **[Events Widgets for Elementor](https://eventscalendaraddons.com/plugin/events-widgets-pro/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get-pro-ewe&utm_content=more-plugins)**
+**Disclaimer:** This plugin is not affiliated with or endorsed by the official Elementor team. Some links provided may be affiliate links, which means we could earn a small commission at no additional cost to you if you make a purchase.  
 
-* This plugin provides **The Events Calendar** widgets for Elementor, allowing you to easily display events in a grid, list, or carousel layout.
+---
 
-🌍 **[Loco Translate Addon](https://locoaddon.com/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get-pro-loco&utm_content=more-plugins)**
+👉 **Get [Cool FormKit – Advanced Elementor Form Builder](https://coolformkit.com/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=bottom_name)** 
 
-* Automate the translation process of WordPress plugin and theme strings within a single click via AI-powered translation resources.
-
-🔁 **[Loop Grid Extender for Elementor Pro](https://wordpress.org/plugins/loop-grid-extender-for-elementor-pro/)**
-
-* Enhance Elementor Pro's Loop Grid widget by displaying ACF Repeater Fields inside loop templates.
-
-🚀 **[More Plugins by Cool Plugins](https://coolplugins.net/products/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=all-plugins&utm_content=more-plugins)**
-
-**DISCLAIMER:** This plugin is not affiliated with or developed by the official Elementor team. Some of the links in this content may be affiliate links, meaning we may earn a commission at no extra cost to you if you make a purchase through these links.
-
-— —————————————- —
-**Get [Cool FormKit for Elementor](https://coolplugins.net/product/conditional-fields-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get-pro-cfk&utm_content=footer)**
-— —————————————- —
-
-== Frequently Asked Questions ==
-
-= Does this work with the free version of Elementor? =
-No, this plugin requires **Elementor Pro**, as the Form Widget is only available in the pro version. This plugin enhances the Elementor Pro Form Widget by adding an input masking feature for text fields.
-
-= How do I add an input mask to my Elementor form? =
-After installing and activating the plugin, edit your Elementor form, select a text field, navigate to the **Advanced** tab, and apply the desired mask from the available options.
-
-= Can I create a custom mask in Elementor forms? =
-Currently, the plugin provides predefined masks. However, we plan to introduce an option for custom input masks in future updates based on user feedback and requirements.
-
-= Which input masks are currently available in this? =
-At present, the plugin supports:
-
-* **USA Phone Mask**
-* **Credit Card Number Mask**
-* **Credit Card Expiry Date Mask**
-* **Date and Time Masks**
-* **Brazilian Postal Code (CEP) Mask**
-* **Brazilian Company ID Masks (CPF, CNPJ)**
-
-We will continue to expand the list of supported input masks in future updates based on user suggestions and feedback.
+---
 
 == Screenshots ==
 
@@ -135,85 +105,117 @@ We will continue to expand the list of supported input masks in future updates b
 4. Money mask.
 5. Brazilian format masks.
 
+== Frequently Asked Questions ==
+
+= How do I apply input masks in Elementor? =  
+Install and activate the plugin, edit your Elementor form, select a text field, go to the **Advanced tab**, and choose your mask (phone, date, credit card, etc.).  
+
+= Can I use it with Hello Plus forms? =  
+Yes. This plugin works with both Elementor Pro and Hello Plus form widgets.  
+
+= Does this plugin support Brazilian formats? =  
+Yes, the plugin supports Brazilian input masks including CPF, CNPJ, and CEP fields.
+
+= Who created this plugin? =  
+This plugin was originally developed by **[Rodrigo Bogdanowicz](https://profiles.wordpress.org/rodrigo-bogdanowicz/)**. Since version 4.0.0, it is maintained and updated by the **Cool Plugins** team.  
+
+= Do you offer more advanced features for Elementor forms? =  
+Yes! Upgrade to **[Cool FormKit](https://coolformkit.com/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get_pro&utm_content=faqs)** (aka *coolformkit*) to unlock more advanced Elementor form fields and logic, such as:  
+
+* [Range Slider](https://coolformkit.com/features/range-slider-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=features&utm_content=faqs) for interactive numeric inputs  
+* [Calculator Fields](https://coolformkit.com/features/calculator-for-elementor/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=features&utm_content=faqs) to build BMI, EMI, and loan calculators  
+* [Signature Field](https://coolformkit.com/features/signature-field-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=features&utm_content=faqs) for capturing digital signatures  
+* [Rating Field](https://coolformkit.com/features/rating-field-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=features&utm_content=faqs) to collect user feedback and reviews  
+* Advanced [Conditional Logic](https://coolformkit.com/features/conditional-logic-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=features&utm_content=faqs) to show, hide, enable, or disable fields dynamically  
+* Spam protection with [hCaptcha](https://coolformkit.com/features/hcaptcha-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=features&utm_content=faqs) and [Cloudflare Turnstile](https://coolformkit.com/features/cloudflare-turnstile-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=features&utm_content=faqs)  
+
+= Where can I get support if I face an issue? =  
+You can open a support ticket on the [WordPress.org support forum](https://wordpress.org/support/plugin/mask-form-elementor/) or contact us directly via the [Cool FormKit support page](https://coolformkit.com/support/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=support&utm_content=faqs).  
+
+= How can I report security bugs? =
+You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team helps validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/c87932e4-150a-4b7f-85ff-f3e273201aa1)
+
+---
+
 == Installation ==
 
-### Quick Installation
+1. Go to **Plugins → Add New** in your WordPress dashboard.  
+2. Search for **Input Mask Elementor Form Fields** and click **Install Now**.  
+3. Or manually upload the plugin to `/wp-content/plugins/` via FTP.  
+4. Activate the plugin.  
+5. Edit a form with Elementor, select a text field, and apply an input mask from the options.  
 
-1. Navigate to **"wp-admin >> Plugins >> Add New"** on your WordPress website, search for **"Form Input Masks For Elementor by Cool Plugins"**, and install and activate this plugin developed by [Cool Plugins](https://coolplugins.net/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=homepage&utm_content=installation).
-2. Install **"Elementor PRO"** to access this plugin's features, as the Form Widget is only available in the Elementor Pro version.
-3. Edit a page with Elementor and create a form. In the form text field, navigate to the **Advanced** tab, where you will find the **Mask Control** option. Select the mask you want to apply to the text field.
-4. Save or update the page and preview the changes.
+**Docs & Guides:**
 
-— —————————————- —
-**Get [Cool FormKit for Elementor](https://coolplugins.net/product/conditional-fields-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=get-pro-cfk&utm_content=installation)**
-— —————————————- —
+- [How to use Input Masks in Elementor Forms](https://docs.coolplugins.net/doc/input-masks-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=docs&utm_content=installation)  
+- [Feature details](https://coolformkit.com/features/input-mask-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=features&utm_content=installation)  
+- [Live Demo](https://coolplugins.net/add-input-masks-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=demo&utm_content=installation)  
 
 == Changelog ==
 
-### Version 4.2.2 | 21/08/2025
-- Fixed: - Security issues.
-- Updated: - Dashboard Links.
+= 4.2.3 - Sep 10, 2025 =
+- Added: - Added other plugin recommendations for Elementor users.
+- Fixed: - Mask validation issue with step field form.
+- Fixed: - Conflict between mask validation and reCaptcha v3.
 
-### Version 4.2.1 | 30/07/2025
-- **Improved:** Dashboard links.
+= 4.2.2 - Aug 21, 2025 =  
+* Fixed: Security issues.  
+* Updated: Dashboard links.  
 
-### Version 4.2.0 | 24/07/2025
-**Updated:** - Admin Dashboard enhancements.
-**Tested upto:** - Elementor Version 3.30.3 and Elementor Pro Version 3.30.0.
+= 4.2.1 - Jul 30, 2025 =  
+* Improved: Dashboard links.  
 
-### Version 4.1.2 | 19/03/2025
-**Tested upto:** 
-- Elementor Version 3.28.0 and Elementor Pro Version 3.28.0.
+= 4.2.0 - Jul 24, 2025 =  
+* Updated: Admin dashboard enhancements.  
+* Tested up to: Elementor 3.30.3 and Elementor Pro 3.30.0.  
 
-### Version 4.1.1 | 13/03/2025
-**Added:**
-- Translation support for plugin strings.
-**Fixed:**
-- CPF mask issue.
-**Fixed:**
-- Form submission issue.
+= 4.1.2 - Mar 19, 2025 =  
+* Tested up to: Elementor 3.28.0 and Elementor Pro 3.28.0.  
 
-### Version 4.1.0 | 12/03/2025
-**Added:**
-- Compatibility with Pro Elements and other form plugins.
+= 4.1.1 - Mar 13, 2025 =  
+* Added: Translation support for plugin strings.  
+* Fixed: CPF mask issue.  
+* Fixed: Form submission issue.  
 
-### Version 4.0.0 | 11/03/2025
-[Cool Plugins](https://coolplugins.net/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=homepage&utm_content=author) is now maintaining this plugin and providing regular updates.
+= 4.1.0 - Mar 12, 2025 =  
+* Added: Compatibility with Pro Elements and other form plugins.  
 
-**Added:**
-- Masking added in text field.
+= 4.0.0 - Mar 11, 2025 =  
+* Changed: Plugin now maintained by [Cool Plugins](https://coolplugins.net/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=homepage&utm_content=author).  
+* Added: Masking support inside text fields.  
+* Deprecated: Field-based masking.  
 
-**Deprecated:**
-- Field-based masking deprecated.
+= 3.0 =
+* **Correções:**  
+  - Corrigido o erro das máscaras que não estavam funcionando em modal/popup.  
+  - A máscara Data e Hora não estava funcionando corretamente.  
+* **Melhorias:**  
+  - Agora você pode preencher o campo com a máscara através do teclado numérico no celular/tablet ao invés do teclado alfanumérico.  
+* **Removido:**  
+  - Máscaras de nome de usuário e placas de identificação de veículos.  
+* **Observações:**  
+  - As máscaras foram removidas do seletor de campos no widget do Elementor Form, mas podem ser utilizadas manualmente via ID/Class. Confira o site demo.  
 
-### Version 3.0
-Correções:
-– Corrigido o erro das máscaras que não estavam funcionando em modal/popup  
-– A máscara Data e Hora não estava funcionando corretamente  
+= 2.3 =
+* **Compatibilidade:**  
+  - Agora você pode aplicar as máscaras em qualquer plugin de formulário que tenha opção para inserir classes e IDs personalizadas.  
 
-Melhorias:  
-– Agora você pode preencher o campo com a máscara através do teclado númerico no celular/tablet ao invés do telado alfanumérico  
+= 2.2 =
+* **Melhoria:**  
+  - Nome de usuário, número e validade de cartões.  
 
-Removido:  
-– Máscaras de nome de usuário e placas de identificação de veículos  
+= 2.1 =
+* **Melhoria:**  
+  - Nova máscara para placas de identificação de veículos, com o novo padrão Mercosul.  
 
-Observações: As máscaras foram removidas do seletor de campos no widget do elementor form, mas podem ser utilizadas manualmente via ID/Class, confira o site demo.  
+= 2.0 =
+* **Melhoria:**  
+  - Versão aprimorada com opção para selecionar a máscara diretamente no widget do Elementor Form.  
 
-### Version 2.3
-Compatibilidade:  
-– Agora você pode aplicar as máscaras em qualquer plugin de formulário que tenha opção para inserir classes e ids personalizadas.  
+= 1.0 =  
+* Initial release by Rodrigo Bogdanowicz.
 
-### Version 2.2
-Melhoria:  
-– Nome de usuário, número e validade de cartões.  
+== Upgrade Notice ==
 
-### Version 2.1
-Melhoria:  
-– Nova máscara para placas de identificação de veículos, com o novo padrão Mercosul.  
-
-### Version 2.0
-Melhoria:  
-– Version aprimorada com opção para selecionar a máscara diretamente no widget do elementor form.  
-
-### Version 1.0
-– Version inicial. 
+= 4.0.0 =
+Plugin is now maintained by [Cool Plugins](https://coolplugins.net/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=author&utm_content=upgrade_notice). This major update introduced a new dashboard and improved overall code quality.
