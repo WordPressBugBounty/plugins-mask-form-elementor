@@ -1,21 +1,21 @@
-=== Input Mask Elementor Form Fields ===
+=== Input Mask For Elementor Form Fields ===
 Contributors: coolplugins, narinder-singh, satindersingh, rodrigo-bogdanowicz
 Donate link: https://donate.stripe.com/5kQdR92iBevO75WbPm6c00i
 Tags: mask, input masks, elementor form, elementor, elementor form builder
 Requires at least: 5.0
 Tested up to: 6.8.2
 Requires PHP: 7.2
-Stable tag: 4.2.4
+Stable tag: 4.2.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Elementor tested up to: 3.31.4
-Elementor Pro tested up to: 3.31.3
+Elementor tested up to: 3.32.2
+Elementor Pro tested up to: 3.32.1
 
 Apply input masks in Elementor form widget fields - phone, date, time, credit card, CPF, CNPJ, CEP & more for valid and error-free entries.
 
 == Description ==
 
-**Input Mask Elementor Form Fields** is an Elementor addon that helps to add **[input masks](https://coolformkit.com/features/input-mask-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=features&utm_content=top_name)** on Elementor form fields. It helps you control how users enter data into form fields, ensuring properly formatted entries for phone numbers, credit cards, dates, Brazilian IDs, and more.  
+**Input Mask For Elementor Form Fields** is an Elementor addon that helps to add **[input masks](https://coolformkit.com/features/input-mask-for-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=features&utm_content=top_name)** on Elementor form fields. It helps you control how users enter data into form fields, ensuring properly formatted entries for phone numbers, credit cards, dates, Brazilian IDs, and more.  
 
 Originally developed by **[Rodrigo Bogdanowicz](https://profiles.wordpress.org/rodrigo-bogdanowicz/)**, this plugin is now actively maintained and supported by the **[Cool Plugins team](https://coolplugins.net/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=author&utm_content=author)**, who continue to add new features, bug fixes, and compatibility updates.  
 
@@ -140,7 +140,7 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 == Installation ==
 
 1. Go to **Plugins → Add New** in your WordPress dashboard.  
-2. Search for **Input Mask Elementor Form Fields** and click **Install Now**.  
+2. Search for **Input Mask For Elementor Form Fields** and click **Install Now**.  
 3. Or manually upload the plugin to `/wp-content/plugins/` via FTP.  
 4. Activate the plugin.  
 5. Edit a form with Elementor, select a text field, and apply an input mask from the options.  
@@ -152,6 +152,11 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 - [Live Demo](https://coolplugins.net/add-input-masks-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=demo&utm_content=installation)  
 
 == Changelog ==
+
+= 4.2.5 - Sep 19, 2025 =
+- Added: - Marketing notices with pro elements.
+- Fixed: - Other plugin Conflict with marketing notices.
+- Tested up to: Elementor 3.32.2 and Elementor Pro 3.32.1.
 
 = 4.2.4 - Sep 11, 2025 =
 - Fixed: Third Party Form compatibility issue.
