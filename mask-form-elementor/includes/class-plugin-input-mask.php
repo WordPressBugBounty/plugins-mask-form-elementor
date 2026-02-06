@@ -166,11 +166,11 @@ final class MFE_Plugin {
 
 	public function fme_elementor_review_notice() {
 		if ( ! check_ajax_referer( 'cfef_elementor_review', 'nonce', false ) ) {
-			wp_send_json_error( __( 'Invalid security token sent.', 'cfef' ) );
+			wp_send_json_error( __( 'Invalid security token sent.', 'mask-form-elementor' ) );
 			wp_die( '0', 400 );
 		}
 
-		if ( isset( $_POST['cfef_notice_dismiss'] ) && 'true' === sanitize_text_field($_POST['cfef_notice_dismiss']) ) {
+		if ( isset( $_POST['cfef_notice_dismiss'] ) && 'true' === sanitize_text_field(wp_unslash($_POST['cfef_notice_dismiss'])) ) {
 			update_option( 'fme_elementor_notice_dismiss', 'yes' );
 		}
 		exit;

@@ -1,6 +1,8 @@
 <?php 
 namespace Mask_Form_Elementor;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 // Optionally, you can add an autoloader here (or use Composer)
 class Mask_Form_Elementor {
 
@@ -45,7 +47,6 @@ class Mask_Form_Elementor {
             $this->setup();
             
             add_action( 'template_redirect', array( $this, 'migration_setup' ),1 );
-            add_action( 'init', array( $this, 'text_domain_path_set' ) );
             add_action( 'activated_plugin', array( $this, 'mfe_plugin_redirection' ) );
 
             
@@ -57,12 +58,47 @@ class Mask_Form_Elementor {
 
 			add_action( 'plugins_loaded',array($this,'plugin_loads'));
 
+            add_action( 'elementor_pro/forms/actions/register', array($this,'mfe_register_new_form_actions') );
+            add_action('init', array($this, 'formdb_marketing_hello_plus'));
+
 
             $this->includes();
 
             
 		}
     }
+
+    public function formdb_marketing_hello_plus(){
+
+			if ( !is_plugin_active( 'sb-elementor-contact-form-db/sb_elementor_contact_form_db.php' ) && !defined("formdb_hello_plus_marketing_editor")){
+
+				define("formdb_hello_plus_marketing_editor", true);
+
+				require_once MFE_PLUGIN_PATH . 'includes/helloplus_loader.php';
+				new HelloPlus_Widget_Loader();
+			}
+			
+		}
+
+    public function mfe_register_new_form_actions($form_actions_registrar){
+
+			if($this->is_field_enabled('form_input_mask')){
+
+				if ( !is_plugin_active( 'sb-elementor-contact-form-db/sb_elementor_contact_form_db.php' ) && !defined("formdb_elementor_marketing_editor")){
+
+					define("formdb_elementor_marketing_editor", true);
+
+                    require_once MFE_PLUGIN_PATH . '/includes/class-form-to-sheet.php';
+					$form_actions_registrar->register( new \Sheet_Action() );
+
+				}
+
+			}
+		}
+    private function is_field_enabled($field_key) {
+		$enabled_elements = get_option('cfkef_enabled_elements', array());
+		return in_array(sanitize_key($field_key), array_map('sanitize_key', $enabled_elements));
+	}
 
     public function plugin_loads(){
 
@@ -83,8 +119,8 @@ class Mask_Form_Elementor {
 
             $notice = [
 
-                'title' => __('Elementor Form Addons by Cool Plugins', 'cool-formkit-for-elementor-forms'),
-                'message' => __('Help us make this plugin more compatible with your site by sharing non-sensitive site data.', 'cool-plugins-feedback'),
+                'title' => __('Elementor Form Addons by Cool Plugins', 'mask-form-elementor'),
+                'message' => __('Help us make this plugin more compatible with your site by sharing non-sensitive site data.', 'mask-form-elementor'),
                 'pages' => ['cool-formkit','cfkef-entries','cool-formkit&tab=recaptcha-settings'],
                 'always_show_on' => ['cool-formkit','cfkef-entries','cool-formkit&tab=recaptcha-settings'], // This enables auto-show
                 'plugin_name'=>'mfe'
@@ -123,9 +159,9 @@ class Mask_Form_Elementor {
     public function mfe_plugin_row_meta($plugin_meta, $plugin_file){
         if ( plugin_basename( MFE_PLUGIN_FILE ) === $plugin_file ) {
             $row_meta = array(
-                'Maintained By <a href="' . esc_url('https://coolplugins.net/?utm_source=mfe_plugin&utm_medium=inside&utm_campaign=author_page&utm_content=plugins_list') . '" aria-label="' . esc_attr__('View Form Mask Documentation', 'cool-formkit') . '" target="_blank">' . esc_html__('Cool Plugins', 'cool-formkit') . '</a>',
+                'Maintained By <a href="' . esc_url('https://coolplugins.net/?utm_source=mfe_plugin&utm_medium=inside&utm_campaign=author_page&utm_content=plugins_list') . '" aria-label="' . esc_attr__('View Form Mask Documentation', 'mask-form-elementor') . '" target="_blank">' . esc_html__('Cool Plugins', 'mask-form-elementor') . '</a>',
                 
-                '<a href="https://coolplugins.net/add-input-masks-elementor-form/?utm_source=mfe_plugin&utm_medium=inside&utm_campaign=docs&utm_content=plugins_list" aria-label="' . esc_attr( esc_html__( 'Input Mask Documentation', '' ) ) . '" target="_blank">' . esc_html__( 'Docs & FAQs', 'mfe' ) . '</a>'
+                '<a href="https://coolplugins.net/add-input-masks-elementor-form/?utm_source=mfe_plugin&utm_medium=inside&utm_campaign=docs&utm_content=plugins_list" aria-label="' . esc_attr( esc_html__( 'Input Mask Documentation', 'mask-form-elementor' ) ) . '" target="_blank">' . esc_html__( 'Docs & FAQs','mask-form-elementor' ) . '</a>'
                 ,
             );
     
@@ -145,7 +181,8 @@ class Mask_Form_Elementor {
 		}
 
 		if ( $plugin == plugin_basename( MFE_PLUGIN_FILE ) ) {
-			exit( wp_redirect( admin_url( 'admin.php?page=cool-formkit' ) ) );
+			wp_safe_redirect( admin_url( 'admin.php?page=cool-formkit' ) );
+            exit;
 		}	
     }
 
@@ -159,12 +196,6 @@ class Mask_Form_Elementor {
         $settings_link = '<a href="' . admin_url( 'admin.php?page=cool-formkit' ) . '">Settings</a>';
 		array_unshift( $links, $settings_link );
 		return $links;
-    }
-
-    
-
-    public function text_domain_path_set(){
-        load_plugin_textdomain( 'mask-form-elementor', false, dirname( plugin_basename( MFE_PLUGIN_FILE ) ) . '/languages/' );
     }
 
     public function migration_setup(){
@@ -212,7 +243,7 @@ class Mask_Form_Elementor {
 			require_once MFE_PLUGIN_PATH . 'admin/feedback/admin-feedback-form.php';
 		}
 
-        if(get_option("form_input_mask", true)){
+        if($this->is_field_enabled('form_input_mask')){
 
             require_once MFE_PLUGIN_PATH . 'includes/class-plugin-input-mask.php';
             MFE_Plugin::instance();
@@ -231,6 +262,7 @@ class Mask_Form_Elementor {
         $args = array(
             'post_type'      => array('page', 'post'), // adjust as needed.
             'posts_per_page' => -1,
+            // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
             'meta_query'     => array(
                 array(
                     'key'     => '_elementor_data',
@@ -354,7 +386,8 @@ class Mask_Form_Elementor {
 	 */
 	public function admin_notice_php_version_fail() {
 		$message = sprintf(
-			esc_html__( '%1$s requires PHP version %2$s or greater.', 'extensions-for-elementor-form' ),
+            /* translators: 1: Plugin name, 2: Required PHP version */
+			esc_html__( '%1$s requires PHP version %2$s or greater.', 'mask-form-elementor' ),
 			'<strong>Cool Formkit Lite</strong>',
 			MFE_PHP_MINIMUM_VERSION
 		);
@@ -367,6 +400,7 @@ class Mask_Form_Elementor {
 	 */
 	public function admin_notice_wp_version_fail() {
 		$message = sprintf(
+            /* translators: 1: Plugin name, 2: Required WordPress version */
 			esc_html__( '%1$s requires WordPress version %2$s or greater.', 'mask-form-elementor' ),
 			'<strong>Cool Formkit Lite</strong>',
 			MFE_WP_MINIMUM_VERSION

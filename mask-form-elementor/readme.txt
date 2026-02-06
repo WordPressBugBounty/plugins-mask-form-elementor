@@ -3,13 +3,13 @@ Contributors: coolplugins, narinder-singh, satindersingh, rodrigo-bogdanowicz
 Donate link: https://donate.stripe.com/5kQdR92iBevO75WbPm6c00i
 Tags: mask, input masks, elementor form, elementor, elementor form builder
 Requires at least: 5.0
-Tested up to: 6.8.2
+Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 4.2.5
+Stable tag: 4.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Elementor tested up to: 3.32.2
-Elementor Pro tested up to: 3.32.1
+Elementor tested up to: 3.35.0
+Elementor Pro tested up to: 3.35.0
 
 Apply input masks in Elementor form widget fields - phone, date, time, credit card, CPF, CNPJ, CEP & more for valid and error-free entries.
 
@@ -153,9 +153,24 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 == Changelog ==
 
+= 4.3.1 - Feb 05, 2026 =
+* Improved: Code improvements.
+* Tested up to: Elementor 3.35.0 and Elementor Pro 3.35.0.
+
+= 4.3.0 - Jan 14, 2026 =
+* Fixed: Fix issues reported by "Plugin Check" plugin.
+- Fixed: - Minor textual changes and improved plugin recommendations.          
+
+= 4.2.7 - Nov 28, 2025 =
+- Fixed: - Setting ID mismatch causing updates to not reflect in all versions.
+                               
+= 4.2.6 - Nov 19, 2025 =
+- Fixed: - form submission issue with required hidden mask field.
+- Tested up to: Elementor 3.33.1 and Elementor Pro 3.33.1.
+
 = 4.2.5 - Sep 19, 2025 =
-- Added: - Marketing notices with pro elements.
-- Fixed: - Other plugin Conflict with marketing notices.
+- Added: - Added other plugin recommendations for Pro Elements users.
+- Fixed: - Conflicts with other plugins.
 - Tested up to: Elementor 3.32.2 and Elementor Pro 3.32.1.
 
 = 4.2.4 - Sep 11, 2025 =

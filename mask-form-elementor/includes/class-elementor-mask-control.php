@@ -73,8 +73,8 @@ class MFE_Elementor_Forms_Mask {
 				'tabs_wrapper' => 'form_fields_tabs',
 				'inner_tab' => 'form_fields_advanced_tab',
 				'default' => '',
-				'label_on' => esc_html__( 'On', 'textdomain' ),
-				'label_off' => esc_html__( 'Off', 'textdomain' ),
+				'label_on' => esc_html__( 'On', 'mask-form-elementor' ),
+				'label_off' => esc_html__( 'Off', 'mask-form-elementor' ),
 				'conditions' => [
 					'terms' => [
 						[
@@ -318,7 +318,7 @@ class MFE_Elementor_Forms_Mask {
 		
 				$html = '<div class="cfef_elementor_review_wrapper">';
 				$html .= '<div id="cfef_elementor_review_dismiss" data-url="' . esc_url( $url ) . '" data-nonce="' . esc_attr( $review_nonce ) . '">Close Notice X</div>
-							<div class="cfef_elementor_review_msg">' . __( 'Hope this addon solved your problem!', 'cfef' ) . '<br><a href="https://wordpress.org/support/plugin/mask-form-elementor/reviews/#new-post" target="_blank">Share the love with a ⭐⭐⭐⭐⭐ rating.</a><br><br></div>
+							<div class="cfef_elementor_review_msg">' . __( 'Hope this addon solved your problem!', 'mask-form-elementor' ) . '<br><a href="https://wordpress.org/support/plugin/mask-form-elementor/reviews/#new-post" target="_blank">Share the love with a ⭐⭐⭐⭐⭐ rating.</a><br><br></div>
 							<div class="cfef_elementor_demo_btn"><a href="https://wordpress.org/support/plugin/mask-form-elementor/reviews/#new-post" target="_blank">Submit Review</a></div>
 						</div>';
 		

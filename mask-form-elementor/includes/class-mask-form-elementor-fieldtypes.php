@@ -75,6 +75,7 @@ class Mask_Form_Elementor_FieldTypes {
             $el->add_render_attribute( 'input' . $item_index, 'placeholder', $item['field_label'] );
         }
 
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo '<input size="1" ' . $el->get_render_attribute_string( 'input' . $item_index ) . '>';
     }
 }

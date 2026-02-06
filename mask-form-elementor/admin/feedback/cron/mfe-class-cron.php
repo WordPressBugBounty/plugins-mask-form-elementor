@@ -32,7 +32,7 @@ if (!class_exists('mfe_cronjob')) {
 
                 $schedules['every_30_days'] = array(
                     'interval' => 30 * 24 * 60 * 60, // 2,592,000 seconds
-                    'display'  => __('Once every 30 days'),
+                    'display'  => __('Once every 30 days', 'mask-form-elementor'),
                 );
             }
 
@@ -65,7 +65,8 @@ if (!class_exists('mfe_cronjob')) {
                 global $wpdb;
                 // Server and WP environment details
                 $server_info = [
-                    'server_software'        => isset($_SERVER['SERVER_SOFTWARE']) ? sanitize_text_field($_SERVER['SERVER_SOFTWARE']) : 'N/A',
+                    'server_software'        => isset($_SERVER['SERVER_SOFTWARE']) ? sanitize_text_field(wp_unslash($_SERVER['SERVER_SOFTWARE'])) : 'N/A',
+                    // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
                     'mysql_version'          => $wpdb ? sanitize_text_field($wpdb->get_var("SELECT VERSION()")) : 'N/A',
                     'php_version'            => sanitize_text_field(phpversion() ?: 'N/A'),
                     'wp_version'             => sanitize_text_field(get_bloginfo('version') ?: 'N/A'),
