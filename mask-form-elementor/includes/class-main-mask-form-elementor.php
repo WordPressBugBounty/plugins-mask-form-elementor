@@ -71,7 +71,7 @@ class Mask_Form_Elementor {
     public function formdb_marketing_hello_plus(){
 
 			if ( !is_plugin_active( 'sb-elementor-contact-form-db/sb_elementor_contact_form_db.php' ) && !defined("formdb_hello_plus_marketing_editor")){
-
+                // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound
 				define("formdb_hello_plus_marketing_editor", true);
 
 				require_once MFE_PLUGIN_PATH . 'includes/helloplus_loader.php';
@@ -86,6 +86,7 @@ class Mask_Form_Elementor {
 
 				if ( !is_plugin_active( 'sb-elementor-contact-form-db/sb_elementor_contact_form_db.php' ) && !defined("formdb_elementor_marketing_editor")){
 
+                    // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound   
 					define("formdb_elementor_marketing_editor", true);
 
                     require_once MFE_PLUGIN_PATH . '/includes/class-form-to-sheet.php';
@@ -129,9 +130,10 @@ class Mask_Form_Elementor {
             \CPFM_Feedback_Notice::cpfm_register_notice('cool_forms', $notice);
 
                 if (!isset($GLOBALS['cool_plugins_feedback'])) {
+                    // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound	
                     $GLOBALS['cool_plugins_feedback'] = [];
                 }
-                
+                // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound	
                 $GLOBALS['cool_plugins_feedback']['cool_forms'][] = $notice;
            
             });

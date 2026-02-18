@@ -43,7 +43,7 @@ class MFE_Elementor_Page {
     public static function get_allowed_pages()
     {
         $allowed_pages = self::$allowed_pages;
-
+        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
         $allowed_pages = apply_filters('cfkef_dashboard_allowed_pages', $allowed_pages);
 
         return $allowed_pages;
@@ -139,6 +139,7 @@ class MFE_Elementor_Page {
     }
 
     public function display_admin_notices() {
+        // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
         do_action('cfkef_admin_notices');
     }
 

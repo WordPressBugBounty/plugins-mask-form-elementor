@@ -353,6 +353,7 @@ class MFE_Elementor_Forms_Mask {
 		 *
 		 * @since 1.5
 		 */
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		$controls_to_register = apply_filters( 'fme_after_mask_control_created', $controls_to_register );
 
 		$controls_repeater = new ElementorRepeater();
@@ -445,6 +446,7 @@ class MFE_Elementor_Forms_Mask {
 		 *
 		 * @since 1.5.2
 		 */
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound	
 		do_action( 'fme_after_mask_attribute_added', $field, $field_index, $form_widget );
 	
 		return $field;

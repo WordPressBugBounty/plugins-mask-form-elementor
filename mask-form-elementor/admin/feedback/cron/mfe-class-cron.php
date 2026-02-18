@@ -162,6 +162,6 @@ if (!class_exists('mfe_cronjob')) {
         }
 
     }
-
+    // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
     $cron_init = new mfe_cronjob();
 }

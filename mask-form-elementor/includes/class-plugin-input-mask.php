@@ -139,6 +139,7 @@ final class MFE_Plugin {
 	 * @access public
 	 */
 	public function enqueue_plugin_js() {
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		do_action( 'fme_after_enqueue_scripts' );
 	}
 

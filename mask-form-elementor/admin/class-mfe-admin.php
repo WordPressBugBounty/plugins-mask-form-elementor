@@ -190,6 +190,10 @@ class MFE_Admin {
             wp_send_json_error( array( 'message' => $skin->get_error_messages() ) );
         }
 
+        $parts = explode('-', $plugin_slug);
+		$two_parts_plugin_slug = implode('-', array_slice($parts, 0, 2));
+		update_option( $two_parts_plugin_slug . '-install-by', 'mfe_plugin' );
+
         wp_send_json_success( array( 'message' => 'Plugin installed successfully' ) );
     }
 
@@ -250,10 +254,13 @@ class MFE_Admin {
     public function display_plugin_admin_page() {
 
 
-        $form_mask_installed_date = get_option( 'fme-installDate' );
-        $conditional_fields_installed_date = get_option( 'cfef-installDate' );
-        $conditional_fields_pro_installed_date = get_option( 'cfefp-installDate' );
-        $country_code_installed_date = get_option( 'ccfef-installDate' );
+        $form_mask_installed_date = get_option('fme-installDate');
+        $conditional_fields_installed_date = get_option('cfef-installDate');
+        $conditional_fields_pro_installed_date = get_option('cfefp-installDate');
+        $country_code_installed_date = get_option('ccfef-installDate');
+
+        // New: read stored oldest plugin (set once)
+        $stored_oldest_plugin = get_option('oldest_plugin');
 
         $plugins_dates = [
             'fim_plugin'  => $form_mask_installed_date,
@@ -264,11 +271,23 @@ class MFE_Admin {
 
         $plugins_dates = array_filter($plugins_dates);
 
-        if (!empty($plugins_dates)) {
-            asort($plugins_dates);
-            $first_plugin = key($plugins_dates);
+        $install_by_plugin = get_option('mask-form-install-by');
+
+        if ( ! empty( $install_by_plugin ) ) {
+            $first_plugin = $install_by_plugin;
+        } elseif ( ! empty( $stored_oldest_plugin ) ) {
+            $first_plugin = $stored_oldest_plugin;
         } else {
-            $first_plugin = 'mfe_plugin';
+
+            if (!empty($plugins_dates)) {
+                asort($plugins_dates);
+                $first_plugin = key($plugins_dates);
+            } else {
+                $first_plugin = 'mfe_plugin';
+            }
+
+            // Store it so it never changes on re-install
+            update_option('oldest_plugin', $first_plugin);
         }
 
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended

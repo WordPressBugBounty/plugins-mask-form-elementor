@@ -14,8 +14,10 @@ use Elementor\Controls_Manager;
  * @package Input Mask Elementor Form Fields
  */
 
+// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedClassFound
 if (! class_exists('MFE_Marketing_Controllers')) {
 
+	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedClassFound
 	class MFE_Marketing_Controllers
 	{
 		private static $instance = null;
@@ -43,9 +45,9 @@ if (! class_exists('MFE_Marketing_Controllers')) {
 		{
 
 			$active_plugins = get_option('active_plugins', []);
-
+			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 			if(!defined("formdb_marketing_submission")){
-
+				// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound
 				define("formdb_marketing_submission", true);
 
 				if(!in_array( 'sb-elementor-contact-form-db/sb_elementor_contact_form_db.php', $active_plugins ) && !get_option('cfef_formdb_marketing_dismissed
@@ -286,7 +288,7 @@ if (! class_exists('MFE_Marketing_Controllers')) {
 				return;
 			}
 			else{
-
+				// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound	
 				define( 'EVENT_WIDGET_NOTICE_SHOWN', true );
 
 
@@ -557,7 +559,7 @@ if (! class_exists('MFE_Marketing_Controllers')) {
 						$pagenow        = isset($_POST['pagenow']) ? sanitize_key($_POST['pagenow']) : '';
 
 						if (current_user_can('activate_plugin', $install_status['file'])) {
-
+							$this->mfe_set_install_by_option( $plugin_slug );
 							$network_wide = (is_multisite() && 'import' !== $pagenow);
 							$activation_result = activate_plugin($install_status['file'], '', $network_wide);
 							if (is_wp_error($activation_result)) {
@@ -598,6 +600,8 @@ if (! class_exists('MFE_Marketing_Controllers')) {
 				$install_status = install_plugin_install_status($api);
 				$pagenow        = isset($_POST['pagenow']) ? sanitize_key($_POST['pagenow']) : '';
 
+				$this->mfe_set_install_by_option( $plugin_slug );
+
 				// 🔄 Auto-activate the plugin right after successful install
 				if (current_user_can('activate_plugin', $install_status['file']) && is_plugin_inactive($install_status['file'])) {
 
@@ -612,8 +616,15 @@ if (! class_exists('MFE_Marketing_Controllers')) {
 						$status['activated'] = true;
 					}
 				}
+
 				wp_send_json_success($status);
 			}
+		}
+
+		private function mfe_set_install_by_option( $plugin_slug ) {
+			$parts = explode('-', $plugin_slug);
+			$two_parts_plugin_slug = implode('-', array_slice($parts, 0, 2));
+			update_option( $two_parts_plugin_slug . '-install-by', 'mfe_plugin' );
 		}
 
 
