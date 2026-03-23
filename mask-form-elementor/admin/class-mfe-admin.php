@@ -469,6 +469,9 @@ class MFE_Admin {
     public function enqueue_admin_styles() {
 
         wp_enqueue_style('cfkef-admin-global-style', MFE_PLUGIN_URL . 'assets/css/global-admin-style.css', array(), $this->version, 'all');
+
+        wp_enqueue_script('cfkef-admin-global-script', MFE_PLUGIN_URL . 'assets/js/global-admin.js', array('jquery'), $this->version, true);
+
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         if (isset($_GET['page']) &&(strpos(sanitize_key(wp_unslash($_GET['page'])), 'cool-formkit') !== false || strpos(sanitize_key( wp_unslash($_GET['page'])), 'cfkef-entries') !== false)){
             wp_enqueue_style('cfkef-admin-style', MFE_PLUGIN_URL . 'assets/css/admin-style.css', array(), $this->version, 'all');
