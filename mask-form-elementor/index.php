@@ -5,19 +5,19 @@
  * Plugin URI: https://coolplugins.net/add-input-masks-elementor-form?ref=mask
  * Author: Rodrigo Bogdanowicz
  * Author URI: https://www.bogdanowicz.com.br
- * Version: 4.3.3   
+ * Version: 4.3.4   
  * License: GPL v2 or later   
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html  
  * Text Domain: mask-form-elementor
- * Elementor tested up to: 3.35.7  
- * Elementor Pro tested up to: 3.35.0
+ * Elementor tested up to: 4.0.0
+ * Elementor Pro tested up to: 4.0.0
  */
 
 defined( 'ABSPATH' ) || die( 'The silence is golden!' );
 
 // Define plugin version and paths.
 // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound	
-define( 'MFE_VERSION', '4.3.3' );
+define( 'MFE_VERSION', '4.3.4' );
 define('MFE_PHP_MINIMUM_VERSION','7.4');
 define('MFE_WP_MINIMUM_VERSION','5.5');
 define( 'MFE_PLUGIN_FILE', __FILE__ );
