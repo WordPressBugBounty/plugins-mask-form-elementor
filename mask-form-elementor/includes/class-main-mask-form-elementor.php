@@ -195,7 +195,7 @@ class Mask_Form_Elementor {
     }
 
     public function mfe_plugin_settings_link($links){
-        $settings_link = '<a href="' . admin_url( 'admin.php?page=cool-formkit' ) . '">Settings</a>';
+        $settings_link = '<a href="' . esc_url(admin_url( 'admin.php?page=cool-formkit' )) . '">Settings</a>';
 		array_unshift( $links, $settings_link );
 		return $links;
     }
@@ -251,12 +251,55 @@ class Mask_Form_Elementor {
             MFE_Plugin::instance();
         }
 
+        if($this->is_field_enabled('form_input_mask')){
 
+
+            if ( is_plugin_active( 'elementor-pro/elementor-pro.php' ) || is_plugin_active( 'pro-elements/pro-elements.php' ) ) {
+                // After `elementor/init`, core services (e.g. experiments) are initialized; on `elementor/loaded` they are often still null.
+                if ( did_action( 'elementor/init' ) ) {
+                    $this->load_atomic_form_addon();
+                } else {
+                    add_action( 'elementor/init', array( $this, 'load_atomic_form_addon' ), 20 );
+                }
+            }
+        }
 
         require_once MFE_PLUGIN_PATH . '/includes/class-plugin-elementor-page.php';
         new MFE_Elementor_Page();
 
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+    }
+
+    public function load_atomic_form_addon() {
+        if ( ! is_plugin_active( 'elementor-pro/elementor-pro.php' ) && ! is_plugin_active( 'pro-elements/pro-elements.php' ) ) {
+            return;
+        }
+
+        if ( ! did_action( 'elementor/init' ) || ! class_exists( '\Elementor\Plugin' ) ) {
+            return;
+        }
+
+        $elementor = \Elementor\Plugin::$instance;
+        if ( ! $elementor ) {
+            return;
+        }
+
+        $experiments = isset( $elementor->experiments ) ? $elementor->experiments : null;
+        if ( ! self::are_elementor_atomic_form_experiments_active( $experiments ) ) {
+            return;
+        }
+
+        require_once MFE_PLUGIN_PATH . '/includes/atomic-form-addon-loader.php';
+        \Mask_Form_Elementor\Includes\Atomic_Form_Addon_Loader::get_instance();
+    }
+
+    private static function are_elementor_atomic_form_experiments_active( $experiments ): bool {
+        if ( ! $experiments || ! is_object( $experiments ) || ! method_exists( $experiments, 'is_feature_active' ) ) {
+            return false;
+        }
+
+        return $experiments->is_feature_active( 'e_atomic_elements' )
+            && $experiments->is_feature_active( 'e_pro_atomic_form' );
     }
 
         

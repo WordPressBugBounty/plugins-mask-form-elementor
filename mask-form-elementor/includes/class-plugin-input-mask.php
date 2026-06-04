@@ -166,6 +166,12 @@ final class MFE_Plugin {
 	}
 
 	public function fme_elementor_review_notice() {
+
+		if( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( __( 'You do not have permission to perform this action.', 'mask-form-elementor' ) );
+			wp_die( '0', 403 );
+		}
+
 		if ( ! check_ajax_referer( 'cfef_elementor_review', 'nonce', false ) ) {
 			wp_send_json_error( __( 'Invalid security token sent.', 'mask-form-elementor' ) );
 			wp_die( '0', 400 );
