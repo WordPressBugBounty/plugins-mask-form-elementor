@@ -5,7 +5,7 @@ Tags: mask, input masks, elementor form, elementor, elementor form builder
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 4.4.0
+Stable tag: 4.4.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Elementor tested up to: 4.1.1
@@ -155,7 +155,12 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 == Changelog ==
 
+= 4.4.1 - Jun 16, 2026 =
+* Improved: Cleaned up the notice registration logic for better readability.
+
 = 4.4.0 - Jun 04, 2026 =
+* Added: Atomic form compatibility.
+* Improved: Code improvements.
 * Tested up to: Elementor 4.1.1 and Elementor Pro 4.1.0.
 
 = 4.3.4 - Apr 01, 2026 =
