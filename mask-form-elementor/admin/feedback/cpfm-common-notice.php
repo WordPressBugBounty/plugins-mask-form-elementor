@@ -74,7 +74,6 @@ class CPFM_Feedback_Notice {
         }
 
  
-        $screen         = get_current_screen();
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         $current_page   = isset($_GET['page'])? sanitize_key(wp_unslash($_GET['page'])):'';
     
@@ -178,8 +177,6 @@ class CPFM_Feedback_Notice {
         if (!current_user_can('manage_options') || !function_exists('get_current_screen')) { 
             return;
         }
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-        $screen         = get_current_screen();
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         $current_page   = isset($_GET['page']) ? sanitize_key(wp_unslash($_GET['page'])) : '';
 

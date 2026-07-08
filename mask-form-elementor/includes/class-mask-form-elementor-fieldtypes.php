@@ -30,23 +30,6 @@ class Mask_Form_Elementor_FieldTypes {
         ];
     }
 
-    public function get_all_form_widget_ids( array $elements ) {
-        $widget_ids = [];
-        foreach ( $elements as $element ) {
-            if (
-                isset( $element['elType'], $element['widgetType'] ) &&
-                $element['elType'] === 'widget' &&
-                $element['widgetType'] === 'form'
-            ) {
-                $widget_ids[] = $element['id'];
-            }
-            if ( isset( $element['elements'] ) && is_array( $element['elements'] ) && ! empty( $element['elements'] ) ) {
-                $widget_ids = array_merge( $widget_ids, $this->get_all_form_widget_ids( $element['elements'] ) );
-            }
-        }
-        return array_unique( $widget_ids );
-    }
-
     /**
      * Add custom field types to Elementor Pro.
      *

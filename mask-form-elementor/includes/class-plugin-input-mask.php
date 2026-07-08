@@ -125,22 +125,7 @@ final class MFE_Plugin {
 		require_once MFE_PLUGIN_PATH . '/includes/class-elementor-mask-control.php';
 		new MFE_Elementor_Forms_Mask();
 
-		// add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_plugin_js' ] );
 		add_action( 'elementor/editor/before_enqueue_scripts', array( $this, 'register_editor_scripts') );
-	}
-
-	/**
-	 * Enqueue JS
-	 *
-	 * Register and enqueue JS scripts.
-	 *
-	 * @since 1.4
-	 *
-	 * @access public
-	 */
-	public function enqueue_plugin_js() {
-		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
-		do_action( 'fme_after_enqueue_scripts' );
 	}
 
 	/**

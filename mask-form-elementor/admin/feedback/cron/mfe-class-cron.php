@@ -152,9 +152,6 @@ if (!class_exists('mfe_cronjob')) {
                       return;
                   }
               
-                  $response_body = wp_remote_retrieve_body($response);
-                  $decoded = json_decode($response_body, true);
-                
                   if (!wp_next_scheduled('mfe_extra_data_update')) {
                     wp_schedule_event(time(), 'every_30_days', 'mfe_extra_data_update');
                 }

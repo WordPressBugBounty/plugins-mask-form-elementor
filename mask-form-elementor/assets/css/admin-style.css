@@ -150,9 +150,12 @@ input.cfkef-element-toggle:disabled::before {
   box-shadow: 0px 2px 2px rgb(150 150 150 / 12%);
 }
 
-.cfkef-license-box .wrapper-body,
 .cfkef-settings-box .wrapper-body {
   padding: 10px 20px;
+}
+
+.cfkef-license-box .wrapper-body {
+  padding: 20px;
 }
 
 .cfkef-form-element-wrapper .wrapper-body {
@@ -182,6 +185,7 @@ input.cfkef-element-toggle:disabled::before {
   border: 1px solid #ddd;
   border-radius: 8px;
   max-width: 660px;
+  width: 50%;
   box-shadow: 0px 2px 2px rgb(150 150 150 / 12%);
   display: flex;
   justify-content: space-between;
@@ -202,10 +206,6 @@ input.cfkef-element-toggle:disabled::before {
 
 .cfkef-license-box .wrapper-header h3 {
   color: white;
-}
-
-.cfkef-license-box .wrapper-body {
-  padding: 20px;
 }
 
 .cfkef-license-box * {
@@ -455,67 +455,6 @@ input.cfkef-element-toggle:disabled::before {
   margin: 0;
   padding: 0;
 }
-
-.cfk-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-
-a.cfk-feature {
-  width: calc(50% - 10px);
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #333;
-  display: flex;
-  gap: 15px;
-  align-items: flex-start;
-  transition: 0.4s;
-  position: relative;
-}
-
-
-
-a.cfk-feature:hover {
-  border-color: #838383;
-  transform: scale(1.025);
-  color: #333;
-}
-
-a.cfk-feature img {
-  width: 100px;
-  height: auto;
-}
-
-a.cfk-feature.coming-soon:after,
-a.cfk-feature.available:after {
-  padding: 1px 4px;
-  border-radius: 0 10px;
-  position: absolute;
-  top: 1px;
-  right: 1px;
-}
-
-a.cfk-feature.coming-soon:after {
-  content: "Coming Soon...";
-  background-color: #e1e1e1;
-  color: #4d544d;
-  font-size: 0.9em;
-}
-
-a.cfk-feature.available:after {
-  content: "✓";
-  background-color: #c9f3cf;
-  color: #005e00;
-  font-size: 1.2em;
-}
-
-
-
-
 
 a.cfk-box.review {
   text-decoration: none;
@@ -905,10 +844,6 @@ span.cfkef-pro-feature a {
 }
 
 /* License Page */
-.cfkef-license-box {
-  width: 50%;
-}
-
 .cfkef-license-upgrade-box {
   background-color: #fff6f7;
   padding: 10px;
@@ -1011,26 +946,6 @@ span.cfkef-pro-feature a {
 
 .cfk-plugins .cfk-middle {
   width: calc(33.33% - 16px);
-}
-
-.icon-check,
-.icon-cross {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  color: white;
-}
-
-.icon-check {
-  background-color: #4caf50;
-}
-
-.icon-cross {
-  background-color: #f44336;
 }
 
 .cfk-p-name {
@@ -1149,14 +1064,6 @@ span.cfkef-pro-feature a {
   display: flex;
   gap: 15px;
 }
-
-a.button-primary.upgrade-pro-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-}
-
 
 .cfk-wrapper * {
   box-sizing: border-box;

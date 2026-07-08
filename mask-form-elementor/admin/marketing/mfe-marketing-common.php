@@ -231,6 +231,26 @@ if (! class_exists('MFE_Marketing_Controllers')) {
 			wp_send_json_error(['message' => 'Unknown notice type']);
 		}
 
+		/**
+		 * Build Elementor editor marketing notice RAW_HTML.
+		 *
+		 * @param string $message      Notice body text.
+		 * @param string $plugin_slug  data-plugin value for the install button.
+		 * @param string $button_label Install button label.
+		 * @return string
+		 */
+		private function get_editor_marketing_notice_html( $message, $plugin_slug, $button_label ) {
+			return '<div class="elementor-control-raw-html cool-form-wrp"><div class="elementor-control-notice elementor-control-notice-type-info">
+										<div class="elementor-control-notice-icon">
+										<img class="mfe-highlight-icon" src="' . esc_url( MFE_PLUGIN_URL . 'admin/marketing/images/mfe-highlight-icon.svg' ) . '" width="250" alt="Highlight Icon" />
+										</div>
+										<div class="elementor-control-notice-main">
+										<div class="elementor-control-notice-main-content">' . esc_html( $message ) . '</div>
+											<div class="elementor-control-notice-main-actions">
+											<button type="button" class="elementor-button e-btn e-info e-btn-1 mfe-install-plugin" data-plugin="' . esc_attr( $plugin_slug ) . '" data-nonce="' . esc_attr( wp_create_nonce( 'mfe_install_nonce' ) ) . '">' . esc_html( $button_label ) . '</button></button>
+										</div></div>
+										</div></div>';
+		}
 
 		public function mfe_register_controls($element)
 		{
@@ -268,16 +288,11 @@ if (! class_exists('MFE_Marketing_Controllers')) {
 					'name'      => 'lgefep_acf_mkt_repeater_tag',
 					'label'     => '',
 					'type'      => \Elementor\Controls_Manager::RAW_HTML,
-					'raw'       => '<div class="elementor-control-raw-html cool-form-wrp"><div class="elementor-control-notice elementor-control-notice-type-info">
-										<div class="elementor-control-notice-icon">
-										<img class="mfe-highlight-icon" src="' . esc_url(MFE_PLUGIN_URL . 'admin/marketing/images/mfe-highlight-icon.svg') . '" width="250" alt="Highlight Icon" />
-										</div>
-										<div class="elementor-control-notice-main">
-										<div class="elementor-control-notice-main-content">Enable smart taxonomy filters for your Elementor loop grid.</div>
-											<div class="elementor-control-notice-main-actions">
-											<button type="button" class="elementor-button e-btn e-info e-btn-1 mfe-install-plugin"  data-plugin="loop-grid" data-nonce="' . esc_attr(wp_create_nonce('mfe_install_nonce')) . '">Install Loop Grid Extender</button></button>
-										</div></div>
-										</div></div>',
+					'raw'       => $this->get_editor_marketing_notice_html(
+						'Enable smart taxonomy filters for your Elementor loop grid.',
+						'loop-grid',
+						'Install Loop Grid Extender'
+					),
 
 					'condition'       => array(
 						'lgefep_taxonomy_dropdown' => 'yes'
@@ -409,14 +424,11 @@ if (! class_exists('MFE_Marketing_Controllers')) {
 					'name'      => 'lgefep_acf_mkt_repeater_tag',
 					'label'     => '',
 					'type'      => \Elementor\Controls_Manager::RAW_HTML,
-					'raw'       => '<div class="elementor-control-raw-html cool-form-wrp"><div class="elementor-control-notice elementor-control-notice-type-info">
-											<div class="elementor-control-notice-icon"><img class="mfe-highlight-icon" src="' . esc_url(MFE_PLUGIN_URL . 'admin/marketing/images/mfe-highlight-icon.svg') . '" width="250" alt="Highlight Icon" />
-											</div>
-											<div class="elementor-control-notice-main">
-											<div class="elementor-control-notice-main-content">Display ACF Repeater fields in your Elementor loop grid.</div>
-											<div class="elementor-control-notice-main-actions">
-											<button type="button" class="elementor-button e-btn e-info e-btn-1 mfe-install-plugin"  data-plugin="loop-grid" data-nonce="' . esc_attr(wp_create_nonce('mfe_install_nonce')) . '">Install Loop Grid Extender</button></button>
-											</div></div></div></div>',
+					'raw'       => $this->get_editor_marketing_notice_html(
+						'Display ACF Repeater fields in your Elementor loop grid.',
+						'loop-grid',
+						'Install Loop Grid Extender'
+					),
 					'condition'       => array(
 						'lgefep_mkt_country_notice' => 'yes'
 					),

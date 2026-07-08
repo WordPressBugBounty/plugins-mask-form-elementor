@@ -245,14 +245,9 @@ class Mask_Form_Elementor {
 			require_once MFE_PLUGIN_PATH . 'admin/feedback/admin-feedback-form.php';
 		}
 
-        if($this->is_field_enabled('form_input_mask')){
-
+        if ( $this->is_field_enabled( 'form_input_mask' ) ) {
             require_once MFE_PLUGIN_PATH . 'includes/class-plugin-input-mask.php';
             MFE_Plugin::instance();
-        }
-
-        if($this->is_field_enabled('form_input_mask')){
-
 
             if ( is_plugin_active( 'elementor-pro/elementor-pro.php' ) || is_plugin_active( 'pro-elements/pro-elements.php' ) ) {
                 // After `elementor/init`, core services (e.g. experiments) are initialized; on `elementor/loaded` they are often still null.
@@ -389,9 +384,6 @@ class Mask_Form_Elementor {
         $this->admin      = new Mask_Form_Elementor_Admin();
         $this->fieldtypes = new Mask_Form_Elementor_FieldTypes();
 
-        // Enqueue frontend scripts.
-        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
-
         // Enqueue Elementor editor/admin scripts.
         add_action( 'elementor/editor/after_enqueue_scripts', [ $this->admin, 'enqueue_admin_scripts' ] );
 
@@ -412,15 +404,6 @@ class Mask_Form_Elementor {
 			add_action( 'admin_notices', [ $this, 'admin_notice_wp_version_fail' ] );
 			return false;
 		}
-
-		// if ( is_plugin_active( 'cool-formkit-for-elementor-forms/cool-formkit-for-elementor-forms.php' ) ) {
-		// 	return false;
-		// }
-
-		// if ( ! is_plugin_active( 'elementor-pro/elementor-pro.php' ) ) {
-		// 	add_action('admin_notices', array($this, 'admin_notice_missing_main_plugin'));
-		// 	return false;
-		// }
 
 		return true;
 	}
@@ -452,23 +435,6 @@ class Mask_Form_Elementor {
 		);
 
 		echo wp_kses_post( sprintf( '<div class="notice notice-error"><p>%1$s</p></div>', $message ) );
-	}
-
-    /**
-	 * Show notice to enable elementor pro
-	 */
-	public function admin_notice_missing_main_plugin() {
-		$message = sprintf(
-			// translators: %1$s replace with Conditional Fields for Elementor Form & %2$s replace with Elementor Pro.
-			esc_html__(
-				'%1$s requires %2$s to be installed and activated.',
-				'mask-form-elementor'
-			),
-			esc_html__( 'Mask Form Elementor', 'mask-form-elementor' ),
-			esc_html__( 'Elementor Pro', 'mask-form-elementor' ),
-			); 
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', esc_html( $message ) );
-		deactivate_plugins( plugin_basename( MFE_PLUGIN_FILE ) );
 	}
 
     /**

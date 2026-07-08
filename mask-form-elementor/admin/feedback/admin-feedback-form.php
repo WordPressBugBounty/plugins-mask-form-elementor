@@ -212,13 +212,14 @@ class mfe_feedback {
 			$install_date 		= get_option('mfe-install-date');
 			$unique_key     	= '15';
 			$site_id        	= $site_url . '-' . $install_date . '-' . $unique_key;
+			$user_info          = $this->cfef_get_user_info();
 			$response          = wp_remote_post(
 				$feedback_url,
 				array(
 					'timeout' => 30,
 					'body'    => array(
-						'server_info' => wp_json_encode($this->cfef_get_user_info()['server_info']),
-                        'extra_details' => wp_json_encode($this->cfef_get_user_info()['extra_details']),
+						'server_info' => wp_json_encode( $user_info['server_info'] ),
+                        'extra_details' => wp_json_encode( $user_info['extra_details'] ),
                         'plugin_initial'  => isset($plugin_initial) ? sanitize_text_field($plugin_initial) : 'N/A',
 						'plugin_version' => sanitize_text_field($this->plugin_version),
 						'plugin_name'    => sanitize_text_field($this->plugin_name),

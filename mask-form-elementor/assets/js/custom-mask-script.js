@@ -213,7 +213,6 @@
       
               // Handle money input separately
               if ($(input).hasClass("mask-moneyc") || $(input).hasClass("mask-moneyd")) {
-                  let type = $(input).hasClass("mask-moneyc") ? "C" : "D";
                   handleMoneyInput(event);
                   return;
               }
@@ -246,7 +245,7 @@
         }
         function getDigitIndexFromCaret(formattedStr, caretPos, alphanumeric) {
           var count = 0;
-          var pattern = alphanumeric ? /[A-Z0-9]/ : /\d/;
+          var pattern = alphanumeric ? /[A-Za-z0-9]/ : /\d/;
           for (var i = 0; i < caretPos; i++) {
             if (pattern.test(formattedStr.charAt(i))) {
               count++;
@@ -256,7 +255,7 @@
         }
         function mapDigitIndexToCaret(formattedStr, digitIndex, alphanumeric) {
           var count = 0;
-          var pattern = alphanumeric ? /[A-Z0-9]/ : /\d/;
+          var pattern = alphanumeric ? /[A-Za-z0-9]/ : /\d/;
           for (var i = 0; i < formattedStr.length; i++) {
             if (pattern.test(formattedStr.charAt(i))) {
               if (count === digitIndex) {
@@ -615,7 +614,6 @@
 
     let maskErrorArr = {};
     let nextBtnOriginalClicks = {};
-    let clickStatus={};
     let recaptchaEvent = {};
     let submitBtnEvent = {};
 
@@ -1005,15 +1003,7 @@
         return;
       }
 
-      // ❌ Validation failed
-      if (hasVisibleMaskError) {
-        // $form[0].classList.remove("elementor-form-waiting");
-        $submitBtn.data("clicked", false);
-        e.preventDefault();
-        return;
-      }
-
-      if (!hasVisibleMaskError) { 
+      if (!hasVisibleMaskError) {
         // ✅ All good — submit the form
 
 
