@@ -5,11 +5,11 @@ Tags: mask, input masks, elementor form, elementor, elementor form builder
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 4.4.4
+Stable tag: 4.4.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Elementor tested up to: 4.1.1
-Elementor Pro tested up to: 4.1.0
+Elementor tested up to: 4.2.1
+Elementor Pro tested up to: 4.2.1
 
 Apply input masks in Elementor form widget fields - phone, date, time, credit card, CPF, CNPJ, CEP & more for valid and error-free entries.
 
@@ -154,6 +154,9 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 - [Live Demo](https://coolplugins.net/add-input-masks-elementor-form/?ref=mask&utm_source=mfe_plugin&utm_medium=readme&utm_campaign=demo&utm_content=installation)  
 
 == Changelog ==
+
+= 4.4.5 - Jul 31, 2026 =
+* Tested up to: Elementor 4.2.1 and Elementor Pro 4.2.1.
 
 = 4.4.4 - Jul 08, 2026 =
 * Improved: Code improvements.
